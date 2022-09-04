@@ -1,0 +1,46 @@
+body {
+  background-image: url("https://rtlimages.apple.com/cmc/dieter/store/16_9/R236.png");
+  background-color: rgba(0, 0, 0, 0.847);
+  background-blend-mode: screen;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.products {
+  background-image: url("https://www.apple.com/si/buy/images/mac_ipad_ipod_hero.png");
+  background-color: rgba(32, 30, 30, 0.8352941176);
+  background-blend-mode: screen;
+  margin: 2rem;
+  padding: 4rem;
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.customers {
+  background-image: url("https://9to5mac.com/wp-content/uploads/sites/6/2021/09/AppleMallatBayPlaza-Interior-thumb.jpg?quality=82&strip=all&w=1000");
+  background-color: rgba(32, 30, 30, 0.8352941176);
+  background-blend-mode: screen;
+  margin: 2rem;
+  padding: 4rem;
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+  background-position: center;
+  border-radius: 15px;
+  background-size: cover;
+}
+
+.purchases {
+  background-image: url("https://9to5mac.com/wp-content/uploads/sites/6/2016/02/apple-retail-rewards.jpg");
+  background-color: rgba(32, 30, 30, 0.8352941176);
+  background-blend-mode: screen;
+  margin: 2rem;
+  padding: 4rem;
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+  background-position: center;
+  border-radius: 15px;
+  background-size: cover;
+}/*# sourceMappingURL=menu_style.css.map */

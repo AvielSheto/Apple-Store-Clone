@@ -1,0 +1,22 @@
+body {
+    background-image: url("https://rtlimages.apple.com/cmc/dieter/store/16_9/R236.png");
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: screen;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+
+
+
+.product {
+    background-color: rgba(255, 255, 255, 0.938);
+    background-blend-mode: screen;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 10px;
+}
