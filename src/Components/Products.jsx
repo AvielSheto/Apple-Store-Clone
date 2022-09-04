@@ -13,11 +13,11 @@ export default function Products() {
     return (
         <div>
             <Container>
-                <div style={{ margin: "1rem", padding:"1rem", borderRadius: "15px", backgroundColor: "white", opacity: "0.8", textAlign: "center" }}>
+                <div style={{margin:"1rem", padding:"1rem", borderRadius: "15px", backgroundColor: "white", opacity: "0.8", textAlign: "center" }}>
                     <TotalPurchases />
-                    <Typography style={{ textAlign: 'left' }} variant="h3" gutterBottom>All Products</Typography>
+                    {/* <h2>All Products</h2> */}
+                    <Typography style={{ textAlign: 'left'}} variant="h3" >All Products</Typography>
                 </div>
-
 
                 {storeData.products.map((item, index) => {
                     let ProductId = item.id
@@ -28,15 +28,14 @@ export default function Products() {
                                 <p><strong>Product Name: </strong><Link to={`/editProduct/${item.id}`}>{item.name}</Link></p>
                                 <p><strong>Product Price: </strong>{item.price}</p>
                                 <p><strong>Quantity: </strong>{item.quantity}</p>
-
                             </div>
                             <div>
                                 <img style={{ height: "12rem", width: "16rem" }} src={item.img} alt="" />
                             </div>
                         </div>
-
                         <div>
-                            <h5 style={{ textAlign: 'center' }}>Purchases</h5>
+                        <Typography style={{ textAlign: 'left' }} variant="h3" >Purchases</Typography>
+                        <br />
                             <AllCustomers id={ProductId} />
                             <br />
                         </div>

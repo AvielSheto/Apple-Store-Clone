@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+// style scss
+import '../style/_products.scss'
 // bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 // mui
@@ -35,7 +37,7 @@ export default function EditProduct() {
 
     return (
         <Container >
-            <div className="regionOne" style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius:"15px"}}>
+            <div className="product" style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius:"15px"}}>
                 <h1 style={{ textAlign: "center" }}>Edit Product</h1>
                 <h4>Updating product ID: {id} </h4>
 
@@ -45,7 +47,6 @@ export default function EditProduct() {
                     <TextField onChange={handleChange} name='price' label="Price:" variant="outlined" />
                 </div>
                 
-
                 <br />
                 <div style={{ display: 'flex', justifyContent: "space-evenly", padding:"0px 30%"}}>
                     <Button onClick={updateProduct} variant="contained">Update</Button>
@@ -53,18 +54,20 @@ export default function EditProduct() {
                 </div>
             </div>
 
-            <div className="regionTwo" style={{ margin: "2rem", padding: "2rem", border: "2px solid black" , borderRadius:"15px"  }}>
+            <div className="product">
                 <h3 style={{ textAlign: 'center' }}>Purchases History</h3>
                 {storeData.purchases.filter(purchases => purchases.productId === id).map((Purchase, index) => {
-                    return (<div key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black" }}>
+                    return (<div key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius:"10px" }}>
                         <p><strong>Customer ID: </strong><Link to={`/editCustomer/${Purchase.customerId}`}>{Purchase.customerId}</Link></p>
                         <p><strong>Purchase ID: </strong>{Purchase.id}</p>
                         <p><strong>Purchase Date: </strong>{Purchase.date}</p>
                     </div>
                     )
                 })}
-
             </div>
+            <br />
+            <br />
+
         </Container>
     )
 }

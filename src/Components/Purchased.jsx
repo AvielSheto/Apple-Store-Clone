@@ -59,9 +59,7 @@ export default function Purchased() {
 
   return (
     <Container>
-
-
-      <div className='purchases' style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
+      <div className='purchased' >
         <Typography variant="h3" >Purchased Search</Typography>
         <br />
         <FormControl fullWidth>
@@ -75,7 +73,6 @@ export default function Purchased() {
         </FormControl>
         <br />
         <br />
-
         <FormControl fullWidth>
           <InputLabel >Customer</InputLabel>
           <Select label="Age" name='customer' onChange={handleChange}>
@@ -107,7 +104,7 @@ export default function Purchased() {
       </div>
 
       {result.customers &&
-        <div className='purchases'>
+        <div className='purchased'>
           <h1>results</h1>
           <br />
           <Table striped bordered hover size="md">

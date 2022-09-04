@@ -33,9 +33,9 @@ export default function Customers() {
 
   return (
     <Container>
-      <div className='customer' style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
+      <div className='customer'>
         {/* <h1 style={{ textAlign: 'center' }}>customers</h1> */}
-        <Typography variant="h2" >customers</Typography>
+        <Typography variant="h3" >Customers</Typography>
         <br />
         <Table striped bordered hover size="md">
           <thead>
@@ -95,17 +95,13 @@ export default function Customers() {
               <Button onClick={() => { setProduct({ ...product, productId: item.id, date: `${today}` }) }} variant='contained'>Add</Button>
             </div>
           )
-
         })}
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           {showSave && <Button onClick={() => { saveProduct() }} variant='contained'>Save</Button>}
         </div>
       </div>}
-        
       <br />
       <br />
-
-
     </Container>
   )
 }
