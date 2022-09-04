@@ -42,6 +42,8 @@ export default function Products() {
                     </div>
                     )
                 })}
+                <br />
+                <br />
             </Container>
         </div>
     )

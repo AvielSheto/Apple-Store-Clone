@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -11,15 +11,17 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 
-
-
-
-
 export default function EditProduct() {
     const dispatch = useDispatch();
     const { id } = useParams();
     const storeData = useSelector(state => state);
-    const [item, setItem] = useState({ id: id, name: "", price: "", quantity: "" })
+    const [item, setItem] = useState({ id: id, name: "", price: ""})
+
+    useEffect(()=>{
+       {storeData.products.filter(products => products.id === id).map((item)=>{
+        return(setItem({id: id, name:`${item.name}`, price:`${item.price}`, quantity: 1, img:`${item.img}`}))
+       })}
+    },[])
 
     const updateProduct = () => {
         const action = { type: "UPDATEPRODUCT", payload: item }
@@ -40,7 +42,7 @@ export default function EditProduct() {
             <div className="product" style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius:"15px"}}>
                 <h1 style={{ textAlign: "center" }}>Edit Product</h1>
                 <h4>Updating product ID: {id} </h4>
-
+                <br />
                 <div style={{display:'flex', flexDirection:"column"}}>
                     <TextField onChange={handleChange} name='name' label="Name:" variant="outlined" />
                     <br />

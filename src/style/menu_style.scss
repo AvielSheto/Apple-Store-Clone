@@ -19,9 +19,12 @@ body {
     background-repeat: no-repeat;
     background-blend-mode: screen;
     background-position: center;
-    border-radius: 10px;
+    border-radius: 5px;
     background-size: cover;
     color: black;
+    box-shadow: 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+
     img {
         height: 12rem;
         width: 38rem;
@@ -29,9 +32,19 @@ body {
 
 }
 
+
+
+.products:hover {
+    box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
+
+
+}
+
+
+
 .customers {
     background-image: url("https://9to5mac.com/wp-content/uploads/sites/6/2021/09/AppleMallatBayPlaza-Interior-thumb.jpg?quality=82&strip=all&w=1000");
-    background-color: rgba(32, 30, 30, 0.8352941176);
+    background-color: rgba(32, 30, 30, 0);
     background-blend-mode: screen;
     margin: 2rem;
     padding: 4rem;
@@ -43,9 +56,9 @@ body {
 
 }
 
-.purchases{
+.purchases {
     background-image: url("https://9to5mac.com/wp-content/uploads/sites/6/2016/02/apple-retail-rewards.jpg");
-    background-color: rgba(32, 30, 30, 0.8352941176);
+    background-color: rgba(32, 30, 30, 0);
     background-blend-mode: screen;
     margin: 2rem;
     padding: 4rem;
