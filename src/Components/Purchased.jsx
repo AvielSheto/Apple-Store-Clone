@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+// style scss
+import '../style/_purchased_style.scss'
 // mui
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-// 
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-// 
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 // bootstrap
 import Table from 'react-bootstrap/Table';
 
@@ -60,8 +61,8 @@ export default function Purchased() {
     <Container>
 
 
-      <div style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
-        <h1 style={{ textAlign: 'center' }}>Purchased Search</h1>
+      <div className='purchases' style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
+        <Typography variant="h3" >Purchased Search</Typography>
         <br />
         <FormControl fullWidth>
           <InputLabel >Product</InputLabel>
@@ -106,7 +107,7 @@ export default function Purchased() {
       </div>
 
       {result.customers &&
-        <div style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
+        <div className='purchases'>
           <h1>results</h1>
           <br />
           <Table striped bordered hover size="md">
@@ -132,6 +133,8 @@ export default function Purchased() {
           </Table>
         </div>
       }
+      <br />
+      <br />
     </Container>
   )
 }

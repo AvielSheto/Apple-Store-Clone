@@ -9,8 +9,9 @@ export default function Menu() {
   return (
         <Container  >
           <Link style={{ textDecoration: 'none' }} to={'products'}>
-            <div className='products' >
-              <Typography variant="h3" color='white' style={{ textShadow: "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000" }}>Products</Typography>
+            <div className='products'>
+              <Typography variant="h3" >Products</Typography>
+              <img src="https://www.itworld.com.my/image/catalog/10newhome/apsp_banner.jpg" alt="products" />
             </div>
           </Link>
 

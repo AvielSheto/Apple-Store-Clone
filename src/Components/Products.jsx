@@ -13,7 +13,7 @@ export default function Products() {
     return (
         <div>
             <Container>
-                <div style={{ margin: "1rem", padding: "1rem 1rem", borderRadius: "15px", backgroundColor: "white", opacity: "0.8", textAlign: "center" }}>
+                <div style={{ margin: "1rem", padding:"1rem", borderRadius: "15px", backgroundColor: "white", opacity: "0.8", textAlign: "center" }}>
                     <TotalPurchases />
                     <Typography style={{ textAlign: 'left' }} variant="h3" gutterBottom>All Products</Typography>
                 </div>

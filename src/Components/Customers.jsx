@@ -6,7 +6,9 @@ import Table from 'react-bootstrap/Table';
 // mui
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-
+import Typography from '@mui/material/Typography';
+// style scss
+import "../style/_customers_style.scss"
 
 export default function Customers() {
   const dispatch = useDispatch()
@@ -31,9 +33,10 @@ export default function Customers() {
 
   return (
     <Container>
-
-      <div style={{margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
-        <h1 style={{ textAlign: 'center' }}>customers</h1>
+      <div className='customer' style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
+        {/* <h1 style={{ textAlign: 'center' }}>customers</h1> */}
+        <Typography variant="h2" >customers</Typography>
+        <br />
         <Table striped bordered hover size="md">
           <thead>
             <tr>
@@ -73,29 +76,35 @@ export default function Customers() {
         </Table>
       </div>
 
-
-      {showProduct && <h1 style={{ textAlign: 'center' }}>Add Product To Customer ID:{product.customerId}</h1>}
-      {showProduct && storeData.products.map((item, index) => {
-        return (
-          <div key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
-            <div style={{display:"flex", justifyContent:"space-between"}}>
-              <div>
-                <h3 style={{ textAlign: 'center' }}>Product ID: {item.id}</h3>
-                <p><strong>Product Name: </strong><Link to={`/editProduct/${item.id}`}>{item.name}</Link></p>
-                <p><strong>Product Price: </strong>{item.price}</p>
-                <p><strong>Quantity: </strong>{item.quantity}</p>
+      {showProduct && <div className='customer'>
+        {showProduct && <Typography style={{ textAlign: 'center' }} variant="h3" >Add Product To Customer: {product.customerId}</Typography>}
+        {showProduct && storeData.products.map((item, index) => {
+          return (
+            <div className='customer' key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <div>
+                  <h3 style={{ textAlign: 'center' }}>Product ID: {item.id}</h3>
+                  <p><strong>Product Name: </strong><Link to={`/editProduct/${item.id}`}>{item.name}</Link></p>
+                  <p><strong>Product Price: </strong>{item.price}</p>
+                  <p><strong>Quantity: </strong>{item.quantity}</p>
+                </div>
+                <div>
+                  <img style={{ height: "10rem", width: "18rem" }} src={item.img} alt="" />
+                </div>
               </div>
-              <div>
-                <img style={{ height: "10rem", width: "15rem" }} src={item.img} alt="" />
-              </div>
+              <Button onClick={() => { setProduct({ ...product, productId: item.id, date: `${today}` }) }} variant='contained'>Add</Button>
             </div>
-            <Button onClick={()=>{setProduct({ ...product, productId: item.id, date: `${today}`}) }} variant='contained'>Add</Button>
-          </div>
-        )
-      })}
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        {showSave && <Button onClick={() => { saveProduct() }} variant='contained'>Save</Button>}
-      </div>
+          )
+
+        })}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          {showSave && <Button onClick={() => { saveProduct() }} variant='contained'>Save</Button>}
+        </div>
+      </div>}
+        
+      <br />
+      <br />
+
 
     </Container>
   )

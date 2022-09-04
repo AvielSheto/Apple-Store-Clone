@@ -1,22 +1,32 @@
 body {
     background-image: url("https://rtlimages.apple.com/cmc/dieter/store/16_9/R236.png");
-    background-color: rgba(0, 0, 0, 0.847);
+    background-color: rgba(252, 249, 249, 0);
     background-blend-mode: screen;
-    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
 }
 
 .products {
-    background-image: url("https://www.apple.com/si/buy/images/mac_ipad_ipod_hero.png");
-    background-color: rgba(32, 30, 30, 0.8352941176);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
     background-blend-mode: screen;
     margin: 2rem;
-    padding: 4rem;
+    padding: 0rem 4rem;
     background-repeat: no-repeat;
     background-blend-mode: screen;
     background-position: center;
-    border-radius: 15px;
+    border-radius: 10px;
+    background-size: cover;
+    color: black;
+    img {
+        height: 12rem;
+        width: 38rem;
+    }
+
 }
 
 .customers {
@@ -28,8 +38,9 @@ body {
     background-repeat: no-repeat;
     background-blend-mode: screen;
     background-position: center;
-    border-radius: 15px;
+    border-radius: 10px;
     background-size: cover;
+
 }
 
 .purchases {
@@ -41,6 +52,6 @@ body {
     background-repeat: no-repeat;
     background-blend-mode: screen;
     background-position: center;
-    border-radius: 15px;
+    border-radius: 10px;
     background-size: cover;
 }
