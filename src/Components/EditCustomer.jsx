@@ -9,6 +9,8 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import DeleteIcon from '@mui/icons-material/Delete';
+import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
 
 export default function EditCustomer() {
     const storeData = useSelector(state => state)
@@ -16,16 +18,16 @@ export default function EditCustomer() {
     const dispatch = useDispatch()
     const [customer, setCustomer] = useState({ id: id, first: "", last: "", city: "" });
 
-    const updateCustomer = ()=>{
+    const updateCustomer = () => {
         const action = { type: "UPDATECUSTOMER", payload: customer }
         dispatch(action)
     }
-    const deleteCustomer = ()=>{
+    const deleteCustomer = () => {
         const action = { type: "DELETECUSTOMER", payload: customer.id }
         dispatch(action)
     }
 
-    const handleChange = (e)=>{
+    const handleChange = (e) => {
         setCustomer({ ...customer, [e.target.name]: e.target.value })
     }
 
@@ -47,8 +49,8 @@ export default function EditCustomer() {
                 <Form>
                     <br />
                     <div style={{ display: 'flex', justifyContent: "space-evenly", padding: "0px 30%" }}>
-                        <Button onClick={updateCustomer} variant="contained">Update</Button>
-                        <Button onClick={deleteCustomer} variant="contained">Delete</Button>
+                        <Button onClick={updateCustomer} variant="contained" endIcon={<DriveFileRenameOutlineIcon />}>Update</Button>
+                        <Button onClick={deleteCustomer} variant="outlined" startIcon={<DeleteIcon />}>Delete</Button>
                     </div>
                 </Form>
             </div>
@@ -56,7 +58,7 @@ export default function EditCustomer() {
             <div className='customer' >
                 <Typography variant="h4">purchases History</Typography>
                 {storeData.purchases.filter(purchases => purchases.customerId == id).map((Purchase, index) => {
-                    return (<div key={index} style={{margin:"2rem", padding:"2rem", border: "2px solid black,", borderRadius:"10px"}}>
+                    return (<div key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black,", borderRadius: "10px" }}>
                         <p><strong>Product ID: </strong><Link to={`/editProduct/${Purchase.productId}`}>{Purchase.productId}</Link></p>
                         <p><strong>Purchase ID: </strong>{Purchase.id}</p>
                         <p><strong>Purchase Date: </strong>{Purchase.date}</p>

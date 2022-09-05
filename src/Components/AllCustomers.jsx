@@ -55,7 +55,7 @@ export default function AllCustomers(props) {
           </div>}
 
           <div style={{ display: 'flex', justifyContent: "space-evenly" }}>
-            {showAddBtn && <Button onClick={addProducts} variant="contained">Add Product</Button>}
+            {showAddBtn && <Button onClick={addProducts} variant="contained" color="info">Add Product</Button>}
             {showSaveBtn && <Button onClick={SaveProducts} variant="contained">Save</Button>}
           </div>
         </div>
