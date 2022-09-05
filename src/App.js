@@ -14,8 +14,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 import AppleIcon from "@mui/icons-material/Apple";
 import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
-import { Password } from "@mui/icons-material";
 import LoginIcon from '@mui/icons-material/Login';
+import Sign from "./Components/Sign";
 
 export default function App() {
   return (
@@ -46,7 +46,7 @@ export default function App() {
               </BottomNavigation>
             </Link>     
 
-            <Link to={"/password"} style={{ textDecoration: "none" }}>
+            <Link to={"/sign"} style={{ textDecoration: "none" }}>
               <BottomNavigation showLabels>
                 <BottomNavigationAction style={{backgroundColor:"black", color:"GrayText" }} label="Log in" icon={<LoginIcon/>} />
               </BottomNavigation>
@@ -55,13 +55,13 @@ export default function App() {
           </BottomNavigation>
 
         <Routes>
-          <Route path="" element={<Menu />} />
-          <Route path="products" element={<Products />} />
-          <Route path="editProduct/:id" element={<EditProduct />} />
-          <Route path="customers" element={<Customers />} />
-          <Route path="editCustomer/:id" element={<EditCustomer />} />
-          <Route path="purchased" element={<Purchased />} />
-          <Route path="password" element={<Password/>} />
+          <Route path="" element={<Menu/>}/>
+          <Route path="products" element={<Products/>}/>
+          <Route path="editProduct/:id" element={<EditProduct/>}/>
+          <Route path="customers" element={<Customers/>}/>
+          <Route path="editCustomer/:id" element={<EditCustomer/>}/>
+          <Route path="purchased" element={<Purchased/>}/>
+          <Route path="sign" element={<Sign/>}/>
         </Routes>
       </BrowserRouter>
     </div>
