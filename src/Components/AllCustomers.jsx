@@ -4,6 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 // mui
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Fab from '@mui/material/Fab';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 export default function AllCustomers(props) {
   const storeData = useSelector(state => state)
@@ -12,7 +15,6 @@ export default function AllCustomers(props) {
   const [showSaveBtn, setShowSaveBtn] = useState(false)
   const [showAddBtn, setShowAddBtn] = useState(true)
   const [product, setProduct] = useState([])
-
 
   const addProducts = () => {
     setShowProducts(!showProducts)
@@ -38,7 +40,10 @@ export default function AllCustomers(props) {
         let customerId = item.customerId
         let itemDate = item.date
         return <div key={index} style={{ margin: "0.5rem", padding: "2rem", border: "2px solid black", borderRadius:"15px"  }}>
+          <div style={{display:"flex", justifyContent:"space-between"}}>
           <h4>Customer ID: {item.customerId}</h4>
+          <Link to={`/editProduct/${item.id}`}><Fab color="info" aria-label="edit"><EditIcon /></Fab></Link>
+          </div>
           <strong>Customer ID: </strong> <Link to={`/editCustomer/${item.customerId}`}>{item.customerId}</Link>
           <p><strong>Purchased Date: </strong> {item.date}</p>
 

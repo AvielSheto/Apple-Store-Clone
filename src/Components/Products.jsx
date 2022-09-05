@@ -24,7 +24,6 @@ export default function Products() {
                 {storeData.products.map((item, index) => {
                     let ProductId = item.id
                     return (<div key={index} className="product">
-
                         <div style={{ display: "flex", justifyContent: "space-between" }}>
                             <Typography style={{ textAlign: 'left' }} variant="h4" gutterBottom>Product ID: {item.id}</Typography>
                             <Link to={`/editProduct/${item.id}`}><Fab color="info" aria-label="edit"><EditIcon /></Fab></Link>
