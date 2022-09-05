@@ -13,23 +13,24 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 export default function EditCustomer() {
     const storeData = useSelector(state => state)
     const { id } = useParams();
     const dispatch = useDispatch()
-    const [customer, setCustomer] = useState({ id: id, first: "", last: "", city: "" });
+    const [customer, setCustomer] = useState({id: id, first:"", last:"", city:""});
 
-    const updateCustomer = () => {
+    const updateCustomer = ()=>{
         const action = { type: "UPDATECUSTOMER", payload: customer }
         dispatch(action)
     }
-    const deleteCustomer = () => {
+    const deleteCustomer = ()=>{
         const action = { type: "DELETECUSTOMER", payload: customer.id }
         dispatch(action)
     }
 
-    const handleChange = (e) => {
+    const handleChange = (e)=>{
         setCustomer({ ...customer, [e.target.name]: e.target.value })
     }
 
@@ -62,7 +63,7 @@ export default function EditCustomer() {
                     <Typography variant="h4">purchases History</Typography>
                 </div>
 
-                {storeData.purchases.filter(purchases => purchases.customerId == id).map((Purchase, index) => {
+                {storeData.purchases.filter(purchases => purchases.customerId === id).map((Purchase, index) => {
                     return (<div key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "10px" }}>
                         <Link style={{float:"right"}} to={`/editProduct/${Purchase.productId}`}><Fab color="info" aria-label="edit"><EditIcon /></Fab></Link>
                         <p><strong>Product ID: </strong><Link to={`/editProduct/${Purchase.productId}`}>{Purchase.productId}</Link></p>

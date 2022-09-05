@@ -32,7 +32,7 @@ export default function Products() {
                         <div style={{ display: 'flex', justifyContent: "space-between" }}>
                             <div>
                                 <br />
-                                <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product Name: </strong>{item.name}</Typography>
+                                <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product ID: </strong>{item.name}</Typography>
                                 <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product Price: </strong>{item.price}</Typography>
                                 <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Quantity: </strong>{item.quantity}</Typography>
 

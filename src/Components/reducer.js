@@ -3,6 +3,7 @@ function reducer(
     products: [
       { id: "345", name: "iphone 13", price: 1000, quantity: 1, img:"https://www.powerplanetonline.com/cdnassets/iphone_13_pro_max_verde_alpino_01_l.jpg" },
       { id: "574", name: "macBook", price: 2000, quantity: 1, img:"https://www.apple.com/v/macbook-air/o/images/overview/hero_mba_m1__mfge6fbp7t2m_small.jpg" },
+      { id: "654", name: "apple watch", price: 800, quantity: 1, img:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-card-40-hermes-202203?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1645382414043" },
     ],
     customers: [
       { id: "3288", first: "Aviel", last: "Sheto", city: "Ashdod" },
