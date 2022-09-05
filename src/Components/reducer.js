@@ -4,7 +4,8 @@ function reducer(
       { id: "345", name: "iphone 13", price: 1000, quantity: 1, img:"https://www.powerplanetonline.com/cdnassets/iphone_13_pro_max_verde_alpino_01_l.jpg" },
       { id: "574", name: "macBook air", price: 2000, quantity: 1, img:"https://www.apple.com/v/macbook-air/o/images/overview/hero_mba_m1__mfge6fbp7t2m_small.jpg" },
       { id: "654", name: "apple watch", price: 800, quantity: 1, img:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-card-40-hermes-202203?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1645382414043" },
-      { id: "754", name: "Air Pods", price: 600, quantity: 1, img:"https://img.wisebuy.co.il/data/pics/Article/e-headphone/MWP22_AV2132167617576184434132482656796281838132527653696856380.jpg" }
+      { id: "754", name: "Air Pods", price: 600, quantity: 1, img:"https://img.wisebuy.co.il/data/pics/Article/e-headphone/MWP22_AV2132167617576184434132482656796281838132527653696856380.jpg" },
+      { id: "823", name: "ipad", price: 1200, quantity: 1, img:"https://bstore.bezeq.co.il/media/26860/740-gray.jpg" }
     ],
     customers: [
       { id: "3288", first: "Aviel", last: "Sheto", city: "Ashdod" },
@@ -39,6 +40,12 @@ function reducer(
         id: "5",
         customerId: "3288",
         productId: "754",
+        date: "Aug 27 2022 13:10:05 GMT+0300",
+      },
+      {
+        id: "6",
+        customerId: "3288",
+        productId: "823",
         date: "Aug 27 2022 13:10:05 GMT+0300",
       },
     ],
