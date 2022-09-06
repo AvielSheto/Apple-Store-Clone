@@ -29,8 +29,8 @@ export default function SignUp() {
     const login = async () => {
         try {
             const user = await signInWithEmailAndPassword(auth,
-                registerEmail,
-                registerPassword
+                loginEmail,
+                loginPassword
             )
             console.log(user);
         } catch (error) {
