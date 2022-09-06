@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 // mui
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -46,17 +47,23 @@ export default function AllCustomers(props) {
           <p><strong>Purchased Date: </strong> {item.date}</p>
           {showProducts && <div> {storeData.products.map((item, index) => {
             return (
-              <div key={index} style={{margin:"0.5rem", padding: "1rem", border: "2px solid black", borderRadius: "10px" }}>
-                <strong>Product Name: </strong><Link to={`/editProduct/${item.id}`}>{item.name}</Link>
-                <p><strong>Product Price: </strong>{item.price}</p>
-                <p><strong>Quantity: </strong>{item.quantity}</p>
+              <div key={index} style={{ margin: "0.5rem", padding: "2rem", border: "2px solid black", borderRadius: "10px" }}>
+                <div style={{display:"flex", justifyContent:"space-between"}}>
+                  <div>
+                    <strong>Product Name: </strong><Link to={`/editProduct/${item.id}`}>{item.name}</Link>
+                    <p><strong>Product Price: </strong>{item.price}</p>
+                    <p><strong>Quantity: </strong>{item.quantity}</p>
+                  </div>
+                  <div>
+                  <img style={{ height: "12rem", width: "16rem" }} src={item.img} alt="" />
+                  </div>
+                </div>
                 <div>
-                <Button onClick={() => { setProduct({ ...product, id: "4", customerId: customerId, productId: item.id, date: itemDate }) }} variant="contained"><AddShoppingCartIcon /></Button>
+                  <Button onClick={() => { setProduct({ ...product, id: "4", customerId: customerId, productId: item.id, date: itemDate }) }} variant="contained"><AddShoppingCartIcon /></Button>
                 </div>
               </div>)
           })}
           </div>}
-
           <div style={{ display: 'flex', justifyContent: "space-evenly" }}>
             {showAddBtn && <Button onClick={addProducts} variant="outlined" color="info">Add Product<ShoppingCartIcon /></Button>}
             {showSaveBtn && <Button onClick={SaveProducts} variant="contained">Save</Button>}
