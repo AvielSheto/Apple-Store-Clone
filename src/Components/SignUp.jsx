@@ -1,44 +1,73 @@
-    import React, {useRef} from 'react'
-import { Form, Button, Card } from 'react-bootstrap'
-import { AuthProvider, useAuth } from './contexts/AuthContext'
+import React, { useState } from 'react'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+import {auth} from '../firebase'
 
 export default function SignUp() {
-    const emailRef = useRef()
-    const passwordRef = useRef()
-    const passwordConfirmRef = useRef()
-    const {signUp} = useAuth()
+    const [registerEmail, setRegisterEmail] = useState("");
+    const [registerPassword, setRegisterPassword] = useState("");
+    const [loginEmail, setLoginEmail] = useState("");
+    const [loginPassword, setLoginPassword] = useState("");
 
-    function handleSubmit(e){
-        e.preventDefault()
+    const [user, setUser] = useState({});
 
-        signUp(emailRef.current.value, passwordRef.current.value)
+    const register = async () => {
+        try {
+            const user = await createUserWithEmailAndPassword(auth,
+                 registerEmail,
+                 registerPassword
+                  )
+            console.log(user);
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
-  return (
-    <AuthProvider>
-    <Card>
-        <Card.Body>
-            <Form>
-            <h2 className='text-center mb-4'>Sign Up</h2>
-            <Form.Group id='email'>
-                <Form.Label>Email</Form.Label>
-                <Form.Control type='email' ref={emailRef} required/>
-            </Form.Group>
-            <Form.Group id='password'>
-                <Form.Label>Password</Form.Label>
-                <Form.Control type='password' ref={passwordRef} required/>
-            </Form.Group>
-            <Form.Group id='password-confirm'>
-                <Form.Label>Password Confirm</Form.Label>
-                <Form.Control type='password' ref={passwordConfirmRef} required/>
-            </Form.Group>
-            <Button className='w-100' type='submit'>Sign up</Button>
-            </Form>
-        </Card.Body>
-    </Card>
-    <div className='w-100 text-center mt-2'>
-    Already have an account? Log In
-    </div>
-    </AuthProvider>
-  )
+    const login = async () => {
+
+    }
+
+    const logout = async () => {
+
+    }
+
+    return (
+        <div>
+            <div>
+                <h3> Register User </h3>
+                <input
+                    placeholder="Email..."
+                    onChange={(e) => { setRegisterEmail(e.target.value); }}
+                />
+                <input
+                    placeholder="Password..."
+                    onChange={(e) => { setRegisterPassword(e.target.value); }}
+                />
+
+                <button onClick={register}> Create User</button>
+            </div>
+
+            <div>
+                <h3> Login </h3>
+                <input
+                    placeholder="Email..."
+                    onChange={(e) => {
+                        setLoginEmail(e.target.value);
+                    }}
+                />
+                <input
+                    placeholder="Password..."
+                    onChange={(e) => {
+                        setLoginPassword(e.target.value);
+                    }}
+                />
+
+                <button onClick={login}> Login</button>
+            </div>
+
+            <h4> User Logged In: </h4>
+            {user?.email}
+
+            {/* <button onClick={logout}> Sign Out </button> */}
+        </div>
+    )
 }

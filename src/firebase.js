@@ -1,14 +1,15 @@
-import firebase from "firebase/app"
-import "firebase/auth"
+import { initializeApp } from "firebase/app";
+import {getAuth} from 'firebase/auth'
 
-const app = firebase.initializeApp({
-    apiKey: "AIzaSyBRlSWfBuebReUn4zypsRsfd3ieWVsDVDo",
-    authDomain: "apple-development-f7a4b.firebaseapp.com",
-    projectId: "apple-development-f7a4b",
-    storageBucket: "apple-development-f7a4b.appspot.com",
-    messagingSenderId: "466898038235",
-    appId: "1:466898038235:web:fe3fa97226be2fe8a18bfe"
-})
+const firebaseConfig = {
+  apiKey: "AIzaSyBRlSWfBuebReUn4zypsRsfd3ieWVsDVDo",
+  authDomain: "apple-development-f7a4b.firebaseapp.com",
+  projectId: "apple-development-f7a4b",
+  storageBucket: "apple-development-f7a4b.appspot.com",
+  messagingSenderId: "466898038235",
+  appId: "1:466898038235:web:fe3fa97226be2fe8a18bfe"
+};
 
-export const auth = app.auth()
-export default app
+const app = initializeApp(firebaseConfig);
+
+export const auth = getAuth(app)
