@@ -1,11 +1,16 @@
-import React from 'react'
+    import React, {useRef} from 'react'
 import { Form, Button, Card } from 'react-bootstrap'
 
 export default function SignUp() {
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const passwordConfirmRef = useRef()
   return (
     <>
+
     <Card>
         <Card.Body>
+            <Form>
             <h2 className='text-center mb-4'>Sign Up</h2>
             <Form.Group id='email'>
                 <Form.Label>Email</Form.Label>
@@ -17,8 +22,10 @@ export default function SignUp() {
             </Form.Group>
             <Form.Group id='password-confirm'>
                 <Form.Label>Password Confirm</Form.Label>
-                <Form.Control type='password' ref={passwordRef} required/>
+                <Form.Control type='password' ref={passwordConfirmRef} required/>
             </Form.Group>
+            <Button className='w-100' type='submit'>Sign up</Button>
+            </Form>
         </Card.Body>
     </Card>
     <div className='w-100 text-center mt-2'>
