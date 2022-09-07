@@ -7,11 +7,7 @@ import Menu from "./Components/Menu";
 import Products from "./Components/Products";
 import Purchased from "./Components/Purchased";
 // mui
-import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import MenuIcon from "@mui/icons-material/Menu";
-import LoginIcon from "@mui/icons-material/Login";
 import AppleIcon from "@mui/icons-material/Apple";
 import PeopleRoundedIcon from "@mui/icons-material/PeopleRounded";
 import SignUp from "./Components/SignUp";
@@ -20,6 +16,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import SignIn from "./Components/SignIn";
 
 export default function App() {
   return (
@@ -50,8 +47,7 @@ export default function App() {
                 <Nav.Link>
                   <Link
                     to={"/purchased"}
-                    style={{ color: "white", textDecoration: "none" }}
-                  >
+                    style={{ color: "white", textDecoration: "none" }}>
                     <ShoppingCartIcon />
                     Purchases
                   </Link>
@@ -61,15 +57,8 @@ export default function App() {
                   title="Account"
                   id="basic-nav-dropdown"
                 >
-                  <NavDropdown.Item>
-                    <Link style={{ textDecorationLine: "none" }} to={"/signUp"}>
-                      {" "}
-                      Log in
-                    </Link>
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Registor
-                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/signIn">Sign In</NavDropdown.Item>
+                  <NavDropdown.Item href="/signUp">Sign Up</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">
                     log out
@@ -78,7 +67,6 @@ export default function App() {
               </Nav>
               <Nav>
                 <Nav.Link href="#deets">More deets</Nav.Link>
-               
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -91,6 +79,7 @@ export default function App() {
           <Route path="customers" element={<Customers />} />
           <Route path="editCustomer/:id" element={<EditCustomer />} />
           <Route path="purchased" element={<Purchased />} />
+          <Route path="signIn" element={<SignIn />} />
           <Route path="signUp" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
