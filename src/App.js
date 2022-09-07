@@ -11,9 +11,9 @@ import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
+import LoginIcon from "@mui/icons-material/Login";
 import AppleIcon from "@mui/icons-material/Apple";
 import PeopleRoundedIcon from "@mui/icons-material/PeopleRounded";
-import LoginIcon from "@mui/icons-material/Login";
 import SignUp from "./Components/SignUp";
 // bootstrap
 import Container from 'react-bootstrap/Container';
@@ -59,12 +59,13 @@ export default function App() {
 
         <Navbar bg="dark" expand="lg">
           <Container>
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand> <Link to={''} style={{color:"white"}}><AppleIcon/></Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
+                <Nav.Link><Link to={''} style={{color:"white", textDecoration:"none"}}>Products<ShoppingCartIcon/></Link></Nav.Link>
+                <Nav.Link><Link to={''} style={{color:"white", textDecoration:"none"}}>Costumers <PeopleRoundedIcon/></Link></Nav.Link>
+                <Nav.Link><Link to={''} style={{color:"white", textDecoration:"none"}}>Purchases <ShoppingCartIcon/></Link></Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
