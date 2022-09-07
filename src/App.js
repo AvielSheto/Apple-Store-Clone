@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Customers from "./Components/Customers";
 import EditCustomer from "./Components/EditCustomer";
@@ -17,8 +17,17 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import SignIn from "./Components/SignIn";
+// firebase login
+import { auth } from './firebase'
+import {onAuthStateChanged} from 'firebase/auth'
+
 
 export default function App() {
+  const [user, setUser] = useState({});
+
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser)
+})
   return (
     <div>
       <BrowserRouter>
@@ -65,9 +74,7 @@ export default function App() {
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
-              <Nav>
-                <Nav.Link href="#deets">More deets</Nav.Link>
-              </Nav>
+              <Nav>{user?.email}</Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
