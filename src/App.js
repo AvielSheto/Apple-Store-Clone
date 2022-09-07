@@ -59,24 +59,21 @@ export default function App() {
 
         <Navbar bg="dark" expand="lg">
           <Container>
-            <Navbar.Brand> <Link to={''} style={{color:"white"}}><AppleIcon/></Link></Navbar.Brand>
+            <Navbar.Brand> <Link to={''} style={{color:"white"}}><MenuIcon/></Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link><Link to={''} style={{color:"white", textDecoration:"none"}}>Products<ShoppingCartIcon/></Link></Nav.Link>
+                <Nav.Link><Link to={''} style={{color:"white", textDecoration:"none"}}>Products<AppleIcon/></Link></Nav.Link>
                 <Nav.Link><Link to={''} style={{color:"white", textDecoration:"none"}}>Costumers <PeopleRoundedIcon/></Link></Nav.Link>
                 <Nav.Link><Link to={''} style={{color:"white", textDecoration:"none"}}>Purchases <ShoppingCartIcon/></Link></Nav.Link>
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown style={{color:"white"}} title="Account" id="basic-nav-dropdown">
+                  <NavDropdown.Item >Log in</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
-                    Another action
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
-                    Something
+                    Registor
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">
-                    Separated link
+                     log out
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
