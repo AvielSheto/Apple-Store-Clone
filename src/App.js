@@ -16,66 +16,69 @@ import AppleIcon from "@mui/icons-material/Apple";
 import PeopleRoundedIcon from "@mui/icons-material/PeopleRounded";
 import SignUp from "./Components/SignUp";
 // bootstrap
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 export default function App() {
   return (
     <div>
       <BrowserRouter>
-        {/* <BottomNavigation style={{width:"100%", top:"0",backgroundColor:'black' }}>
-            <Link to={""} style={{ textDecoration: "none" }}>
-              <BottomNavigation showLabels  style={{color:"gray" }} >
-                <BottomNavigationAction style={{backgroundColor:"black", color:"GrayText" }} label="menu" icon={<MenuIcon />} />
-              </BottomNavigation>
-            </Link>
-
-            <Link to={"/products"} style={{ textDecoration: "none" }}>
-              <BottomNavigation showLabels  style={{color:"gray" }} > 
-                <BottomNavigationAction style={{backgroundColor:"black", color:"GrayText" }} label="Products" icon={<AppleIcon/>} />
-              </BottomNavigation>
-            </Link>
-
-            <Link to={"/customers"} style={{ textDecoration: "none" }}>
-              <BottomNavigation showLabels>
-                <BottomNavigationAction style={{backgroundColor:"black", color:"GrayText" }} label="Customer" icon={<PeopleRoundedIcon/>}/>
-              </BottomNavigation>
-            </Link>
-
-            <Link to={"/purchased"} style={{ textDecoration: "none" }}>
-              <BottomNavigation showLabels>
-                <BottomNavigationAction style={{backgroundColor:"black", color:"GrayText" }} label="Purchases" icon={<ShoppingCartIcon />} />
-              </BottomNavigation>
-            </Link>     
-
-            <Link to={"/signUp"} style={{ textDecoration: "none" }}>
-              <BottomNavigation showLabels>
-                <BottomNavigationAction style={{backgroundColor:"black", color:"GrayText" }} label="Log in" icon={<LoginIcon/>} />
-              </BottomNavigation>
-            </Link>     
-          </BottomNavigation> */}
-
-        <Navbar bg="dark" expand="lg">
+        <Navbar bg="dark" expand="lg" variant="dark">
           <Container>
-            <Navbar.Brand> <Link to={''} style={{color:"white"}}><MenuIcon/></Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link><Link to={''} style={{color:"white", textDecoration:"none"}}>Products<AppleIcon/></Link></Nav.Link>
-                <Nav.Link><Link to={''} style={{color:"white", textDecoration:"none"}}>Costumers <PeopleRoundedIcon/></Link></Nav.Link>
-                <Nav.Link><Link to={''} style={{color:"white", textDecoration:"none"}}>Purchases <ShoppingCartIcon/></Link></Nav.Link>
-                <NavDropdown style={{color:"white"}} title="Account" id="basic-nav-dropdown">
-                  <NavDropdown.Item >Log in</NavDropdown.Item>
+                <Nav.Link>
+                  <Link
+                    to={"/products"}
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
+                    <AppleIcon /> Products
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link
+                    to={"/customers"}
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
+                    <PeopleRoundedIcon />
+                    Costumers
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link
+                    to={"/purchased"}
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
+                    <ShoppingCartIcon />
+                    Purchases
+                  </Link>
+                </Nav.Link>
+                <NavDropdown
+                  style={{ color: "white" }}
+                  title="Account"
+                  id="basic-nav-dropdown"
+                >
+                  <NavDropdown.Item>
+                    <Link style={{ textDecorationLine: "none" }} to={"/signUp"}>
+                      {" "}
+                      Log in
+                    </Link>
+                  </NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
                     Registor
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.4">
-                     log out
+                    log out
                   </NavDropdown.Item>
                 </NavDropdown>
+              </Nav>
+              <Nav>
+                <Nav.Link href="#deets">More deets</Nav.Link>
+               
               </Nav>
             </Navbar.Collapse>
           </Container>
