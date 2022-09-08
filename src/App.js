@@ -11,6 +11,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AppleIcon from "@mui/icons-material/Apple";
 import PeopleRoundedIcon from "@mui/icons-material/PeopleRounded";
 import SignUp from "./Components/SignUp";
+import Avatar from '@mui/material/Avatar';
+
 // bootstrap
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -18,8 +20,8 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import SignIn from "./Components/SignIn";
 // firebase login
-import { auth } from './firebase'
-import {onAuthStateChanged} from 'firebase/auth'
+import { auth } from "./firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 
 export default function App() {
   const [user, setUser] = useState({});
@@ -27,6 +29,9 @@ export default function App() {
     setUser(currentUser);
   });
 
+  const logout = async () => {
+    await signOut(auth);
+  };
 
   return (
     <div>
@@ -70,12 +75,12 @@ export default function App() {
                   <NavDropdown.Item href="/signIn">Sign In</NavDropdown.Item>
                   <NavDropdown.Item href="/signUp">Sign Up</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    log out
-                  </NavDropdown.Item>
+                  <NavDropdown.Item onClick={logout}>log out</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
-              <Nav style={{color:"white"}}>{user?.email}</Nav>
+              <Avatar sx={{ m: 1, bgcolor: "info.main" }}>
+              </Avatar>
+              <Nav style={{ color: "white" }}>{user?.email}</Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>

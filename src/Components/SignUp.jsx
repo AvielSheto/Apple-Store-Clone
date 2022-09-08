@@ -2,10 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 // import "../App.css";
 // firebase
-import {
-  createUserWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
+import {createUserWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../firebase";
 // mui 
 import * as React from 'react';
@@ -25,29 +22,24 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 
-// const register = async () => {
-//   try {
-//     const user = await createUserWithEmailAndPassword(
-//       auth,
-//       registerEmail,
-//       registerPassword
-//     );
-//     console.log(user);
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
-
-// const logout = async () => {
-//   await signOut(auth);
-
-
-
-
 export default function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-  
+
+
+  const register = async () => {
+    try {
+      const user = await createUserWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
+      );
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   const theme = createTheme();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -56,6 +48,9 @@ export default function SignUp() {
       email: data.get('email'),
       password: data.get('password'),
     });
+    setRegisterEmail(data.get('email'));
+    setRegisterPassword(data.get('password'));
+    register()
   };
 
   function Copyright(props) {
@@ -70,9 +65,6 @@ export default function SignUp() {
       </Typography>
     );
   }
-
-
-
 
 
   return (

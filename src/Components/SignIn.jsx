@@ -1,3 +1,6 @@
+import { Link,useNavigate } from 'react-router-dom'; 
+import { useState } from 'react'
+// mui
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -6,21 +9,15 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import LinkMui from '@mui/material/Link';
-import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from 'react'
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
+// firebase
+import {signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../firebase";
-
 
 function Copyright(props) {
   return (
@@ -38,6 +35,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  const navigator = useNavigate()
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
 
@@ -46,7 +44,8 @@ export default function SignIn() {
             const user = await signInWithEmailAndPassword(auth,
                 loginEmail,
                 loginPassword
-            )
+                )
+                navigator('/')
             console.log(user);
         } catch (error) {
             console.log(error.message);
@@ -58,12 +57,7 @@ export default function SignIn() {
     const data = new FormData(event.currentTarget);
     setLoginEmail(data.get('email'));
     setLoginPassword(data.get('password'));
-    login()
-
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    login()    
   };
 
   return (
