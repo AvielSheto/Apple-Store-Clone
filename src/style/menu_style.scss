@@ -22,7 +22,7 @@ body {
     border-radius: 10px;
     background-size: cover;
     color: black;
-    box-shadow: 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.400);
     transition: all 0.3s ease-in-out;
     img {
         height: 12rem;
@@ -46,7 +46,7 @@ body {
     background-position: center;
     border-radius: 10px;
     background-size: cover;
-    box-shadow: 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.400);
     transition: all 0.3s ease-in-out;
 }
 .customers:hover {
@@ -65,7 +65,7 @@ body {
     background-position: center;
     border-radius: 10px;
     background-size: cover;
-    box-shadow: 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.400);
     transition: all 0.3s ease-in-out;  
 }
 .purchases:hover {

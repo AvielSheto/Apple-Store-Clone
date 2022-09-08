@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Customers from "./Components/Customers";
 import EditCustomer from "./Components/EditCustomer";
@@ -21,17 +21,17 @@ import SignIn from "./Components/SignIn";
 import { auth } from './firebase'
 import {onAuthStateChanged} from 'firebase/auth'
 
-
 export default function App() {
   const [user, setUser] = useState({});
-
   onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser)
-})
+    setUser(currentUser);
+  });
+
+
   return (
     <div>
       <BrowserRouter>
-        <Navbar bg="dark" expand="lg" variant="dark">
+        <Navbar bg="black" expand="lg" variant="dark">
           <Container>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -56,7 +56,8 @@ export default function App() {
                 <Nav.Link>
                   <Link
                     to={"/purchased"}
-                    style={{ color: "white", textDecoration: "none" }}>
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
                     <ShoppingCartIcon />
                     Purchases
                   </Link>
@@ -74,7 +75,7 @@ export default function App() {
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
-              <Nav>{user?.email}</Nav>
+              <Nav style={{color:"white"}}>{user?.email}</Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
