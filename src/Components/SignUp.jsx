@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import "../App.css";
 // firebase
 import {createUserWithEmailAndPassword} from "firebase/auth";
@@ -20,12 +20,10 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
-
 export default function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-
+  const navigator = useNavigate()
 
   const register = async () => {
     try {
@@ -34,13 +32,16 @@ export default function SignUp() {
         registerEmail,
         registerPassword
       );
+      navigator('/')
       console.log(user);
+
     } catch (error) {
       console.log(error.message);
     }
   };
 
   const theme = createTheme();
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
