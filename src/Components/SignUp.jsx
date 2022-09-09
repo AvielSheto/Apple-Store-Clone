@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import "../App.css";
 // firebase
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../firebase";
-// mui 
+// mui
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -19,7 +18,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+ 
 export default function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
@@ -32,6 +31,7 @@ export default function SignUp() {
         registerEmail,
         registerPassword
       );
+      console.log("jdndn");
       navigator('/')
       console.log(user);
 
@@ -69,15 +69,6 @@ export default function SignUp() {
 
 
   return (
-    // <div className="App">
-    //   <div>
-    //     <h3> Register User </h3>
-    //     <input placeholder="Email..." onChange={(e) => { setRegisterEmail(e.target.value) }}/>
-    //     <input placeholder="Password..." onChange={(e) => { setRegisterPassword(e.target.value) }}/>
-    //     <button onClick={register}> Create User</button>
-    //   </div>
-    //   <button onClick={logout}> Sign Out </button>
-    // </div>
 
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">

@@ -36,7 +36,7 @@ export default function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar bg="black" expand="lg" variant="dark">
+        <Navbar style={{padding:"0px", backgroundColor:"rgba(0, 0, 0, 0.345)"}} bg="black" expand="lg" variant="dark">
           <Container>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
