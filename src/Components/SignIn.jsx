@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react'
+import '../style/menu_style.css'
 // mui
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
@@ -18,21 +19,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 // firebase
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <LinkMui color="inherit" href="https://mui.com/">
-        Your Website
-      </LinkMui>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-const theme = createTheme();
 
 export default function SignIn() {
   const navigator = useNavigate()
@@ -61,15 +47,10 @@ export default function SignIn() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <div id="loader-wrapper">
-        <div id="loader"></div>
-
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-
-      </div>
-      <Container component="main" maxWidth="xs">
+    <div className='form'>
+      {/* <ThemeProvider theme={theme}> */}
+      <div style={{margin:"2rem", padding:"2rem", borderRadius:"10px", backgroundColor:"black"}}></div>
+      <Container maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
@@ -77,8 +58,7 @@ export default function SignIn() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-          }}
-        >
+          }}>
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
@@ -106,18 +86,8 @@ export default function SignIn() {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
+            <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me" />
+            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>Sign In</Button>
             <Grid container>
               <Grid item xs>
                 <LinkMui href="#" variant="body2">
@@ -130,8 +100,8 @@ export default function SignIn() {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
-    </ThemeProvider>
+      {/* </ThemeProvider> */}
+    </div>
   );
 }

@@ -1,45 +1,31 @@
-@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
-
-@mixin position-center($text-align: center) {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-	text-align: $text-align;
+@-webkit-keyframes mymove{
+  20%{ transform: rotate(72deg);}
+  40%{ transform: rotate(144deg);}
+  60%{ transform: rotate(216deg);}
+  80%{ transform: rotate(288deg);}
+  100%{ transform: rotate(360deg);}
 }
-
-.loading {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #000;
-	z-index: 9999;
+@keyframes mymove{
+  20%{ transform: rotate(72deg);}
+  40%{ transform: rotate(144deg);}
+  60%{ transform: rotate(216deg);}
+  80%{ transform: rotate(288deg);}
+  100%{ transform: rotate(360deg);}
 }
-
-.loading-text {
-	@include position-center;
-	width: 100%;
-	height: 100px;
-	line-height: 100px;
-	span {
-		display: inline-block;
-		margin: 0 5px;
-		color: #fff;
-    font-family: 'Quattrocento Sans', sans-serif;
-		@for $i from 0 through 6 {
-			&:nth-child(#{$i + 1}) {
-				filter: blur(0px);
-				animation: blur-text 1.5s (#{$i/5})+s infinite linear alternate;
-			}
-		}
-	}
-}
-
-@keyframes blur-text {
-	0% {filter: blur(0px);}
-	100% {filter: blur(4px);}
+.loading{
+  border: solid 5px #BBDEFB;
+  border-radius:100%;
+  border-bottom-color: #2196F3;
+  width:50px;
+  height: 50px;
+  -webkit-animation:mymove .5s infinite;
+  animation: mymove .5s infinite;
+  
+  /*Para posicionamiento*/
+  position:absolute;
+  margin: auto;
+  left: 0;
+  top:0;
+  right:0;
+  bottom:0;
 }
