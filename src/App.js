@@ -7,9 +7,7 @@ import Menu from "./Components/Menu";
 import Products from "./Components/Products";
 import Purchased from "./Components/Purchased";
 // mui
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AppleIcon from "@mui/icons-material/Apple";
-import PeopleRoundedIcon from "@mui/icons-material/PeopleRounded";
 import SignUp from "./Components/SignUp";
 import Avatar from '@mui/material/Avatar';
 
@@ -22,6 +20,7 @@ import SignIn from "./Components/SignIn";
 // firebase login
 import { auth } from "./firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import Loading from "./Components/Loading";
 
 export default function App() {
   const [user, setUser] = useState({});
@@ -36,51 +35,36 @@ export default function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar style={{padding:"0px", backgroundColor:"rgba(0, 0, 0, 0.345)"}} bg="black" expand="lg" variant="dark">
-          <Container>
+        <Navbar style={{padding: "0.1rem", backgroundColor: "rgba(0, 0, 0, 0.345)",display:"flex", alignItems:"center" }} bg="black" expand="lg" variant="dark">
+          <Container >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Collapse id="basic-navbar-nav" >
               <Nav className="me-auto">
                 <Nav.Link>
-                  <Link
-                    to={"/products"}
-                    style={{ color: "white", textDecoration: "none" }}
-                  >
-                    <AppleIcon /> Products
-                  </Link>
+                  <Link to={'/'} style={{ color: "white", textDecoration: "none" }}><AppleIcon /></Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link
-                    to={"/customers"}
-                    style={{ color: "white", textDecoration: "none" }}
-                  >
-                    <PeopleRoundedIcon />
-                    Costumers
-                  </Link>
+                  <Link to={'/products'} style={{ color: "white", textDecoration: "none" }}>Products</Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link
-                    to={"/purchased"}
-                    style={{ color: "white", textDecoration: "none" }}
-                  >
-                    <ShoppingCartIcon />
-                    Purchases
-                  </Link>
+                  <Link to={'/customers'} style={{ color: "white", textDecoration: "none" }}>{/* <PeopleRoundedIcon /> */}Costumers</Link>
                 </Nav.Link>
-                <NavDropdown
-                  style={{ color: "white" }}
-                  title="Account"
-                  id="basic-nav-dropdown"
-                >
+                <Nav.Link>
+                  <Link to={'/purchased'} style={{ color: "white", textDecoration: "none" }}>{/* <ShoppingCartIcon /> */}Purchases</Link>
+                </Nav.Link>
+                <NavDropdown style={{ color: "white" }} title="Account" id="basic-nav-dropdown">
                   <NavDropdown.Item href="/signIn">Sign In</NavDropdown.Item>
                   <NavDropdown.Item href="/signUp">Sign Up</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={logout}>log out</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
-              <Avatar sx={{ m: 1, bgcolor: "info.main" }}>
-              </Avatar>
+              {user&&
+              <div style={{display:"flex", alignItems:"center"}}>
+              <Avatar sx ={{m: 1, bgcolor: 'info.main'}}></Avatar>
               <Nav style={{ color: "white" }}>{user?.email}</Nav>
+              </div>
+              }
             </Navbar.Collapse>
           </Container>
         </Navbar>
@@ -94,6 +78,7 @@ export default function App() {
           <Route path="purchased" element={<Purchased />} />
           <Route path="signIn" element={<SignIn />} />
           <Route path="signUp" element={<SignUp />} />
+          <Route path="loading" element={<Loading />} />
         </Routes>
       </BrowserRouter>
     </div>

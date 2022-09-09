@@ -43,7 +43,7 @@ export default function EditProduct() {
 
     return (
         <Container >
-            <div className="product" style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
+            <div className="product" >
                 <h1 style={{ textAlign: "center" }}>Edit Product</h1>
                 <h4>Updating product ID: {id} </h4>
                 <br />

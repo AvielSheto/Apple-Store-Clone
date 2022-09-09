@@ -1,4 +1,4 @@
-import { Link,useNavigate } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 // mui
 import * as React from 'react';
@@ -16,7 +16,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 // firebase
-import {signInWithEmailAndPassword} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
 function Copyright(props) {
@@ -36,32 +36,39 @@ const theme = createTheme();
 
 export default function SignIn() {
   const navigator = useNavigate()
-    const [loginEmail, setLoginEmail] = useState("");
-    const [loginPassword, setLoginPassword] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
 
-    const login = async () => {
-        try {
-            const user = await signInWithEmailAndPassword(auth,
-                loginEmail,
-                loginPassword
-                )
-                navigator('/')
-            console.log(user);
-        } catch (error) {
-            console.log(error.message);
-        }
+  const login = async () => {
+    try {
+      const user = await signInWithEmailAndPassword(auth,
+        loginEmail,
+        loginPassword
+      )
+      navigator('/loading')
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
     }
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     setLoginEmail(data.get('email'));
     setLoginPassword(data.get('password'));
-    login()    
+    login()
   };
 
   return (
     <ThemeProvider theme={theme}>
+      <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+      </div>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
