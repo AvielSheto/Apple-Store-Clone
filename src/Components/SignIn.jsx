@@ -49,7 +49,6 @@ export default function SignIn() {
   return (
     <div className='form'>
       {/* <ThemeProvider theme={theme}> */}
-      <div style={{margin:"2rem", padding:"2rem", borderRadius:"10px", backgroundColor:"black"}}></div>
       <Container maxWidth="xs">
         <CssBaseline />
         <Box

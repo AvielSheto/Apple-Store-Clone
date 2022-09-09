@@ -10,6 +10,7 @@ import Purchased from "./Components/Purchased";
 import AppleIcon from "@mui/icons-material/Apple";
 import SignUp from "./Components/SignUp";
 import Avatar from '@mui/material/Avatar';
+import './style/menu_style.scss'
 
 // bootstrap
 import Container from "react-bootstrap/Container";
@@ -34,23 +35,23 @@ export default function App() {
 
   return (
     <div>
-      <BrowserRouter>
-        <Navbar style={{padding: "0.1rem", backgroundColor: "rgba(0, 0, 0, 0.345)",display:"flex", alignItems:"center" }} bg="black" expand="lg" variant="dark">
+      <BrowserRouter >
+        <Navbar style={{padding: "0.1rem", backgroundColor: "rgba(0, 0, 0, 0.345)",display:"flex", alignItems:"center"}} bg="black" expand="lg" variant="dark">
           <Container >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" >
               <Nav className="me-auto">
                 <Nav.Link>
-                  <Link to={'/'} style={{ color: "white", textDecoration: "none" }}><AppleIcon /></Link>
+                  <Link to={'/'} className='link'><AppleIcon /></Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link to={'/products'} style={{ color: "white", textDecoration: "none" }}>Products</Link>
+                  <Link to={'/products'} className='link' >Products</Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link to={'/customers'} style={{ color: "white", textDecoration: "none" }}>{/* <PeopleRoundedIcon /> */}Costumers</Link>
+                  <Link to={'/customers'} className='link'>{/* <PeopleRoundedIcon /> */}Costumers</Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link to={'/purchased'} style={{ color: "white", textDecoration: "none" }}>{/* <ShoppingCartIcon /> */}Purchases</Link>
+                  <Link to={'/purchased'} className='link'>{/* <ShoppingCartIcon /> */}Purchases</Link>
                 </Nav.Link>
                 <NavDropdown style={{ color: "white" }} title="Account" id="basic-nav-dropdown">
                   <NavDropdown.Item href="/signIn">Sign In</NavDropdown.Item>
