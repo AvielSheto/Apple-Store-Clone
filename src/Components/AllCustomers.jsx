@@ -10,29 +10,29 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export default function AllCustomers(props) {
-  const storeData = useSelector(state => state)
-  const dispatch = useDispatch()
-  const [showProducts, setShowProducts] = useState(false)
-  const [showSaveBtn, setShowSaveBtn] = useState(false)
-  const [showAddBtn, setShowAddBtn] = useState(true)
-  const [product, setProduct] = useState([])
+  const storeData = useSelector(state => state);
+  const dispatch = useDispatch();
+  const [showProducts, setShowProducts] = useState(false);
+  const [showSaveBtn, setShowSaveBtn] = useState(false);
+  const [showAddBtn, setShowAddBtn] = useState(true);
+  const [product, setProduct] = useState([]);
 
   const addProducts = () => {
-    setShowProducts(!showProducts)
-    setShowAddBtn(!showAddBtn)
-    setShowSaveBtn(!showSaveBtn)
+    setShowProducts(!showProducts);
+    setShowAddBtn(!showAddBtn);
+    setShowSaveBtn(!showSaveBtn);
   }
 
   const SaveProducts = () => {
-    setShowProducts(!showProducts)
-    setShowSaveBtn(!showSaveBtn)
-    setShowAddBtn(!showAddBtn)
-    addToPurchases()
+    setShowProducts(!showProducts);
+    setShowSaveBtn(!showSaveBtn);
+    setShowAddBtn(!showAddBtn);
+    addToPurchases();
   }
 
   const addToPurchases = () => {
     const action = { type: "ADDPURCHASES", payload: product }
-    dispatch(action)
+    dispatch(action);
   }
 
   return (

@@ -16,19 +16,19 @@ function reducer(
         id: "1",
         customerId: "3288",
         productId: "345",
-        date: "2022-08-29",
+        date: "Aug 30 2022 13:10:05 GMT+0300",
       },
       {
         id: "2",
         customerId: "3288",
         productId: "574",
-        date: "Aug 26 2022 13:10:05 GMT+0300",
+        date: "Aug 29 2022 13:10:05 GMT+0300",
       },
       {
         id: "3",
         customerId: "4932",
         productId: "574",
-        date: "Aug 27 2022 13:10:05 GMT+0300",
+        date: "Aug 28 2022 13:10:05 GMT+0300",
       },
       {
         id: "4",
@@ -40,13 +40,13 @@ function reducer(
         id: "5",
         customerId: "3288",
         productId: "754",
-        date: "Aug 27 2022 13:10:05 GMT+0300",
+        date: "Aug 26 2022 13:10:05 GMT+0300",
       },
       {
         id: "6",
         customerId: "3288",
         productId: "823",
-        date: "Aug 27 2022 13:10:05 GMT+0300",
+        date: "Aug 25 2022 13:10:05 GMT+0300",
       },
     ],
   },
@@ -61,7 +61,7 @@ function reducer(
       if (index >= 0) {
         arr[index] = action.payload;
       }
-      return { ...state, products: arr };
+    return { ...state, products: arr };
 
     case "DELETEPRODUCT":
       const idTwo = action.payload;
@@ -70,14 +70,13 @@ function reducer(
       if (indexTwo >= 0) {
         arrTwo.splice(indexTwo, 1);
       }
-      console.log(arrTwo);
 
       // delete in the purchased
       const arrThree = [...state.purchases];
       const FilteredArrThree = arrThree.filter(
         (arrThree) => arrThree.productId !== idTwo
       );
-      return { ...state, products:arrTwo, purchases: FilteredArrThree };
+    return { ...state, products:arrTwo, purchases: FilteredArrThree };
 
     // edit customer
 

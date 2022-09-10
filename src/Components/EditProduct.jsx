@@ -25,7 +25,7 @@ export default function EditProduct() {
                 return (setItem({ id: id, name: `${item.name}`, price: `${item.price}`, quantity: 1, img: `${item.img}` }))
             })
         }
-    },[])
+    }, [])
 
     const updateProduct = () => {
         const action = { type: "UPDATEPRODUCT", payload: item }
@@ -54,8 +54,8 @@ export default function EditProduct() {
                 </div>
                 <br />
                 <div style={{ display: 'flex', justifyContent: "space-evenly", padding: "0px 30%" }}>
-                    <Button onClick={updateProduct} variant="contained" endIcon={<DriveFileRenameOutlineIcon/>}>Update</Button>
-                    <Button onClick={deleteProduct} variant="outlined" startIcon={<DeleteIcon/>}>Delete</Button>
+                    <Button onClick={updateProduct} variant="contained" endIcon={<DriveFileRenameOutlineIcon />}>Update</Button>
+                    <Button onClick={deleteProduct} variant="outlined" startIcon={<DeleteIcon />}>Delete</Button>
                 </div>
             </div>
 
@@ -72,7 +72,6 @@ export default function EditProduct() {
             </div>
             <br />
             <br />
-
         </Container>
     )
 }
