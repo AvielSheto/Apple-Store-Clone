@@ -1,11 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react'
-import '../style/menu_style.css'
+import '../style/_sign.scss'
 // mui
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -15,42 +13,31 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 // firebase
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 
 export default function SignIn() {
   const navigator = useNavigate()
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
 
-  const login = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
     try {
       const user = await signInWithEmailAndPassword(auth,
-        loginEmail,
-        loginPassword
+        data.get('email'),
+        data.get('password')
       )
       navigator('/loading')
       console.log(user);
     } catch (error) {
       console.log(error.message);
     }
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    setLoginEmail(data.get('email'));
-    setLoginPassword(data.get('password'));
-    login()
   };
 
   return (
-    <div className='form'>
-      {/* <ThemeProvider theme={theme}> */}
-      <Container maxWidth="xs">
-        <CssBaseline />
+    <Container className='form' maxWidth="xs">
+      <div >
         <Box
           sx={{
             marginTop: 8,
@@ -99,8 +86,7 @@ export default function SignIn() {
             </Grid>
           </Box>
         </Box>
-      </Container>
-      {/* </ThemeProvider> */}
-    </div>
+      </div>
+    </Container>
   );
 }

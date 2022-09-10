@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import '../style/_sign.scss'
 // firebase
@@ -8,7 +7,6 @@ import { auth } from "../firebase";
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -18,22 +16,19 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export default function SignUp() {
-  const [registerEmail, setRegisterEmail] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
-  const navigator = useNavigate()
 
-  const register = async () => {
+  const navigator = useNavigate()
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
     try {
-      const user = await createUserWithEmailAndPassword(
-        auth,
-        registerEmail,
-        registerPassword
+      const user = await createUserWithEmailAndPassword(auth,
+        data.get('email'),
+        data.get('password')
       );
-      console.log("jdndn");
-      navigator('/')
+      navigator('/loading')
       console.log(user);
 
     } catch (error) {
@@ -41,39 +36,9 @@ export default function SignUp() {
     }
   };
 
-  const theme = createTheme();
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-    setRegisterEmail(data.get('email'));
-    setRegisterPassword(data.get('password'));
-    register()
-  };
-
-  function Copyright(props) {
-    return (
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        {'Copyright © '}
-        <LinkMui color="inherit" href="https://mui.com/">
-          Your Website
-        </LinkMui>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  }
-
-
   return (
-    <div style={{ margin: "2rem", padding: "2rem", borderRadius: "10px", backgroundColor: "rgba(255, 255, 255, 0.927)" }}>
-      <ThemeProvider theme={theme}>
+    <div className='form'>
         <Container component="main" maxWidth="xs">
-          <CssBaseline />
           <Box
             sx={{
               marginTop: 8,
@@ -154,9 +119,7 @@ export default function SignUp() {
               </Grid>
             </Box>
           </Box>
-          <Copyright sx={{ mt: 5 }} />
         </Container>
-      </ThemeProvider>
     </div>
   )
 }
