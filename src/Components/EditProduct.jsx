@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 // style scss
 import '../style/_products.scss'
@@ -12,11 +12,13 @@ import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
+import '../style/_loading.scss'
 
 export default function EditProduct() {
+    const storeData = useSelector((state) => state);
     const dispatch = useDispatch();
     const { id } = useParams();
-    const storeData = useSelector(state => state);
+    const navigate = useNavigate()
     const [item, setItem] = useState({ id: id, name: "", price: "" })
 
     useEffect(() => {
@@ -25,16 +27,17 @@ export default function EditProduct() {
                 return (setItem({ id: id, name: `${item.name}`, price: `${item.price}`, quantity: 1, img: `${item.img}` }))
             })
         }
-    }, [])
+    },[])
 
     const updateProduct = () => {
         const action = { type: "UPDATEPRODUCT", payload: item }
-        dispatch(action)
+        dispatch(action);
     }
 
     const deleteProduct = () => {
         const action = { type: "DELETEPRODUCT", payload: id }
-        dispatch(action)
+        dispatch(action);
+        navigate('/products')
     }
 
     const handleChange = (e) => {
@@ -54,8 +57,8 @@ export default function EditProduct() {
                 </div>
                 <br />
                 <div style={{ display: 'flex', justifyContent: "space-evenly", padding: "0px 30%" }}>
-                    <Button onClick={updateProduct} variant="contained" endIcon={<DriveFileRenameOutlineIcon />}>Update</Button>
-                    <Button onClick={deleteProduct} variant="outlined" startIcon={<DeleteIcon />}>Delete</Button>
+                    <Button onClick={updateProduct} variant="contained" endIcon={<DriveFileRenameOutlineIcon/>}>Update</Button>
+                    <Button onClick={deleteProduct} variant="outlined" startIcon={<DeleteIcon/>}>Delete</Button>
                 </div>
             </div>
 
@@ -72,6 +75,7 @@ export default function EditProduct() {
             </div>
             <br />
             <br />
+
         </Container>
     )
 }

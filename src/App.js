@@ -36,7 +36,7 @@ export default function App() {
   return (
     <div>
       <BrowserRouter >
-        <Navbar style={{padding: "0.1rem", backgroundColor: "rgba(0, 0, 0, 0.345)",display:"flex", alignItems:"center"}} bg="black" expand="lg" variant="dark">
+        <Navbar style={{ padding: "0.1rem", backgroundColor: "rgba(0, 0, 0, 0.345)", display: "flex", alignItems: "center" }} bg="black" expand="lg" variant="dark">
           <Container >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" >
@@ -60,11 +60,11 @@ export default function App() {
                   <NavDropdown.Item onClick={logout}>log out</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
-              {user&&
-              <div style={{display:"flex", alignItems:"center"}}>
-              <Avatar sx ={{m: 1, bgcolor: 'info.main'}}></Avatar>
-              <Nav style={{ color: "white" }}>{user?.email}</Nav>
-              </div>
+              {user &&
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <Avatar sx={{ m: 1, bgcolor: 'info.main' }}></Avatar>
+                  <Nav style={{ color: "white" }}>{user?.email}</Nav>
+                </div>
               }
             </Navbar.Collapse>
           </Container>
