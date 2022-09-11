@@ -10,24 +10,20 @@ body {
 
 .products {
   display: flex;
+  height: 25vh;
+  background-image: url("https://www.vodafone.com.au/images/merch/project-bb/0975-apple-hero-desktop.jpg");
   justify-content: space-between;
   align-items: center;
-  background-color: white;
   background-blend-mode: screen;
   margin: 2rem;
-  padding: 0rem 4rem;
+  padding: 4rem 4rem;
   background-repeat: no-repeat;
-  background-blend-mode: screen;
   background-position: center;
   border-radius: 10px;
   background-size: cover;
   color: black;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease-in-out;
-}
-.products img {
-  height: 12rem;
-  width: 38rem;
 }
 
 .products:hover {
@@ -38,6 +34,7 @@ body {
 .customers {
   background-image: url("https://9to5mac.com/wp-content/uploads/sites/6/2021/09/AppleMallatBayPlaza-Interior-thumb.jpg?quality=82&strip=all&w=1000");
   background-color: rgba(32, 30, 30, 0);
+  height: 25vh;
   background-blend-mode: screen;
   margin: 2rem;
   padding: 4rem;
@@ -58,6 +55,7 @@ body {
 .purchases {
   background-image: url("https://9to5mac.com/wp-content/uploads/sites/6/2016/02/apple-retail-rewards.jpg");
   background-color: rgba(32, 30, 30, 0);
+  height: 25vh;
   background-blend-mode: screen;
   margin: 2rem;
   padding: 4rem;
@@ -76,7 +74,7 @@ body {
 }
 
 .link {
-  color: rgb(167, 167, 167);
+  color: rgb(146, 146, 146);
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
 }

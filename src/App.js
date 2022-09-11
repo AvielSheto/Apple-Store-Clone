@@ -38,7 +38,7 @@ export default function App() {
       <BrowserRouter >
         <Navbar style={{ padding: "0.1rem", display: "flex", alignItems: "center", backgroundColor:"rgba(0, 0, 0, 0.850)", }} expand="lg" variant="dark">
           <Container >
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle style={{border:"none"}} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" >
               <Nav className="me-auto">
                 <Nav.Link>

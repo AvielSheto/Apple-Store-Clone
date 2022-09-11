@@ -8,10 +8,10 @@ import '../style/menu_style.css'
 export default function Menu() {
   return (
     <Container  >
-      <Link style={{ textDecoration: 'none' }} to={'products'}>
+      <Link style={{ textDecoration:'none'}} to={'products'}>
         <div className='products'>
-          <Typography variant="h3" >Products</Typography>
-          <img src="https://www.itworld.com.my/image/catalog/10newhome/apsp_banner.jpg" alt="products" />
+          <Typography style={{width:"40%"}} variant="h3" >Products</Typography>
+          {/* <img src="https://www.itworld.com.my/image/catalog/10newhome/apsp_banner.jpg" alt="products" /> */}
         </div>
       </Link>
 
