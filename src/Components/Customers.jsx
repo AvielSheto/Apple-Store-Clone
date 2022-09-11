@@ -89,7 +89,7 @@ export default function Customers() {
                   <p><strong>Quantity: </strong>{item.quantity}</p>
                 </div>
                 <div>
-                  <img style={{ height: "10rem", width: "18rem" }} src={item.img} alt="" />
+                  <img style={{ height: "12rem", width: "16rem" }} src={item.img} alt="" />
                 </div>
               </div>
               <Button onClick={() => { setProduct({ ...product, productId: item.id, date: `${today}` }) }} variant='contained'>Add</Button>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import '../style/_products.scss'
 // mui
 import Button from '@mui/material/Button';
 import Fab from '@mui/material/Fab';
@@ -39,14 +40,13 @@ export default function AllCustomers(props) {
       {storeData.purchases.filter(purchases => purchases.productId === props.id).map((item, index) => {
         let customerId = item.customerId
         let itemDate = item.date
-        return <div key={index} style={{ margin: "0.5rem", padding: "2rem", border: "2px solid black", borderRadius: "10px" }}>
-
-          <Link style={{ float: "right" }} to={`/editCustomer/${item.customerId}`}><Fab color="info" aria-label="edit"><EditIcon /></Fab></Link>
+        return <div key={index} style={{ margin: "0.5rem", padding: "2rem", border: "1px solid black", borderRadius: "10px" }}>
+          <Link style={{ float: "right" }} to={`/editCustomer/${item.customerId}`}><Fab size='small' color="primary" aria-label="edit"><EditIcon /></Fab></Link>
           <h4>Customer ID: {item.customerId}</h4>
           <p><strong>Purchased Date: </strong> {item.date}</p>
           {showProducts && <div> {storeData.products.map((item, index) => {
             return (
-              <div key={index} style={{ margin: "0.5rem", padding: "2rem", border: "2px solid black", borderRadius: "10px" }}>
+              <div key={index} className='product'>
                 <div style={{display:"flex", justifyContent:"space-between"}}>
                   <div>
                     <strong>Product Name: </strong><Link to={`/editProduct/${item.id}`}>{item.name}</Link>
