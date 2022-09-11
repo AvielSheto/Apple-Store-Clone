@@ -34,7 +34,6 @@ export default function Customers() {
   return (
     <Container>
       <div className='customer'>
-        {/* <h1 style={{ textAlign: 'center' }}>customers</h1> */}
         <Typography variant="h3" >Customers</Typography>
         <br />
         <Table striped bordered hover size="md">

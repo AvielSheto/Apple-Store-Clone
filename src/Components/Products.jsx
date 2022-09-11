@@ -47,7 +47,7 @@ export default function Products() {
                             </div>
                         </div>
                         <div className='product' >
-                            <Typography style={{ textAlign: 'left' }} variant="h3" >Purchases: </Typography>
+                            <Typography style={{ textAlign: 'left' }} variant="h3" >Product Purchases: </Typography>
                             <br />
                             <AllCustomers id={ProductId} />
                             <br />
