@@ -6,9 +6,11 @@ import EditProduct from "./Components/EditProduct";
 import Menu from "./Components/Menu";
 import Products from "./Components/Products";
 import Purchased from "./Components/Purchased";
+import SignIn from "./Components/sign/SignIn";
+import SignUp from "./Components/sign/SignUp.jsx";
+import Loading from "./Components/sign/Loading";
 // mui
 import AppleIcon from "@mui/icons-material/Apple";
-import SignUp from "./Components/SignUp";
 import Avatar from '@mui/material/Avatar';
 import './style/menu_style.scss'
 
@@ -17,11 +19,9 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import SignIn from "./Components/SignIn";
 // firebase login
 import { auth } from "./firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import Loading from "./Components/Loading";
 
 export default function App() {
   const [user, setUser] = useState({});
@@ -36,7 +36,7 @@ export default function App() {
   return (
     <div>
       <BrowserRouter >
-        <Navbar style={{ padding: "0.1rem", backgroundColor: "rgba(0, 0, 0, 0.345)", display: "flex", alignItems: "center" }} bg="black" expand="lg" variant="dark">
+        <Navbar style={{ padding: "0.1rem", display: "flex", alignItems: "center", backgroundColor:"rgba(0, 0, 0, 0.850)", }} expand="lg" variant="dark">
           <Container >
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" >

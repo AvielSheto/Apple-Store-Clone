@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-import '../style/_sign.scss'
+import '../../style/_sign.scss'
 // firebase
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 // mui
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';

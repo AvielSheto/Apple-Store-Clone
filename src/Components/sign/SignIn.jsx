@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import '../style/_sign.scss'
+import '../../style/_sign.scss'
 // mui
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
@@ -15,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 // firebase
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 
 export default function SignIn() {
   const navigator = useNavigate()
