@@ -31,10 +31,10 @@ export default function Purchased() {
       let arr = [...storeData?.purchases];
       const filteredCustomer = arr.filter(arr => arr.customerId === searchData.customer);
       setResult({ ...storeData, purchases: filteredCustomer });
-    } else if (searchData.date != "" && searchData.product === "" && searchData.customer === "") {
+    } else if (searchData.date !== "" && searchData.product === "" && searchData.customer === "") {
       console.log("search date only");
       let arr = [...storeData?.purchases];
-      const filteredCustomer = arr.filter(arr => arr.date == searchData.date);
+      const filteredCustomer = arr.filter(arr => arr.date === searchData.date);
       setResult({ ...storeData, purchases: filteredCustomer });
     } else if (searchData.customer !== "" && searchData.product !== "" && searchData.date === "") {
       console.log("search customer & products ");

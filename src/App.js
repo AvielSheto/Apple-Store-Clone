@@ -13,7 +13,7 @@ import Loading from "./Components/sign/Loading";
 // mui
 import AppleIcon from "@mui/icons-material/Apple";
 import Avatar from '@mui/material/Avatar';
-import '././Components/menu/style/menu_style.scss'
+import '././Components/menu/menu_style.scss'
 // bootstrap
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
