@@ -19,7 +19,7 @@ export default function Products() {
         <div>
             <Container>
                 <div className='allProducts'>
-                    <Typography style={{ textAlign: 'left' }} variant="h3" >All Products</Typography>
+                    <Typography style={{ textAlign: 'left' }} variant="h4" >All Products</Typography>
                     <TotalPurchases />
                 </div>
 

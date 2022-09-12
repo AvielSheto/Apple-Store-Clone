@@ -1,8 +1,6 @@
 .product {
     background-color: rgba(255, 255, 255, 0.963);
     flex-direction: column;
-    margin: 1rem;
-    padding: 2rem;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -12,7 +10,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: white;
-    margin: 1rem;
+    margin: 1rem 2rem;
     padding: 1rem 2rem;
     border-radius: 15px;
     opacity: 0.8;
