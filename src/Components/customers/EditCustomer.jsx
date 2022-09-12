@@ -13,7 +13,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 export default function EditCustomer() {
     const storeData = useSelector(state => state)

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 // style scss
-import '../style/_products.scss'
+import './_products.scss'
 // bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 // mui
@@ -12,7 +12,7 @@ import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
-import '../style/_loading.scss'
+import '../sign/_loading.scss'
 
 export default function EditProduct() {
     const storeData = useSelector((state) => state);

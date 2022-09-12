@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Customers from "./Components/Customers";
-import EditCustomer from "./Components/EditCustomer";
-import EditProduct from "./Components/EditProduct";
-import Menu from "./Components/Menu";
-import Products from "./Components/Products";
-import Purchased from "./Components/Purchased";
+// Components
+import Customers from "././Components/customers/Customers";
+import EditCustomer from "././Components/customers/EditCustomer";
+import EditProduct from "./Components/Products/EditProduct";
+import Menu from "./Components/menu/Menu";
+import Products from "./Components/Products/Products";
+import Purchased from "./Components/Purchases/Purchases";
 import SignIn from "./Components/sign/SignIn";
-import SignUp from "./Components/sign/SignUp.jsx";
+import SignUp from "./Components/sign/SignUp";
 import Loading from "./Components/sign/Loading";
 // mui
 import AppleIcon from "@mui/icons-material/Apple";
 import Avatar from '@mui/material/Avatar';
-import './style/menu_style.scss'
-
+import '././Components/menu/style/menu_style.scss'
 // bootstrap
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-// firebase login
-import { auth } from "./firebase";
+// firebase
+import { auth } from "././firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
 export default function App() {

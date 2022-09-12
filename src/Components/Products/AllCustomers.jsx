@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import '../style/_products.scss'
+import './_products.scss'
 // mui
 import Button from '@mui/material/Button';
 import Fab from '@mui/material/Fab';

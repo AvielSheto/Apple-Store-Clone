@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 // style scss
-import "../style/_customers_style.scss"
+import "./_customers_style.scss";
 
 export default function Customers() {
   const dispatch = useDispatch()
