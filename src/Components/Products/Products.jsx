@@ -18,22 +18,22 @@ export default function Products() {
     return (
         <div>
             <Container>
-                <div className='allProducts'>
-                    <Typography style={{ textAlign: 'left' }} variant="h4" >All Products</Typography>
+                <div className='allProducts p-1 p-md-3 p-md-3 m-2 mx-md-5' >
+                    <Typography style={{textAlign: 'left'}} variant="h4" >All Products</Typography>
                     <TotalPurchases />
                 </div>
 
                 {storeData.products.map((item, index) => {
                     let ProductId = item.id
-                    return (<div key={index} className="product">
-                        <div className='product'>
+                    return (<div key={index} className="product p-1 p-md-3 p-md-3 m-2 mx-md-5">
+                        <div className='product p-3 my-3'>
                             <div style={{ display: "flex", justifyContent: "space-between" }}>
-                                <Typography style={{ textAlign: 'left' }} variant="h4" gutterBottom>Product ID: {item.id}</Typography>
-                                <Divider />
+                                <Typography style={{ textAlign: 'left' }} variant="h4" >Product ID: {item.id}</Typography>
+                                <Divider/>
                                 <Link to={`/editProduct/${item.id}`}><Fab size="medium" color="primary" aria-label="edit"><EditIcon /></Fab></Link>
                             </div>
                             <br />
-                            <div style={{ display: 'flex', justifyContent: "space-between" }}>
+                            <div className='d-flex d-d-md-flex' style={{ display: 'flex', justifyContent: "space-between"}}>
                                 <div>
                                     <br />
                                     <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product ID: </strong>{item.name}</Typography>
@@ -46,10 +46,10 @@ export default function Products() {
                                 </div>
                             </div>
                         </div>
-                        <div className='product' >
-                            <Typography style={{ textAlign: 'left' }} variant="h3" >Product Purchases: </Typography>
+                        <div className='product p-3' >
+                            <Typography style={{ textAlign: 'left' }} variant="h4" >Product Purchases: </Typography>
                             <br />
-                            <AllCustomers id={ProductId} />
+                            <AllCustomers id={ProductId}/>
                             <br />
                         </div>
                     </div>
