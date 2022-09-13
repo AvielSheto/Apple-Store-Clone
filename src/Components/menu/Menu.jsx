@@ -8,21 +8,22 @@ import './menu_style.scss'
 export default function Menu() {
   return (
     <Container  >
-      <Link style={{ textDecoration:'none'}} to={'products'}>
-        <div className='products'>
-          <Typography style={{width:"40%"}} variant="h3" >Products</Typography>
-          {/* <img src="https://www.itworld.com.my/image/catalog/10newhome/apsp_banner.jpg" alt="products" /> */}
+      <Link style={{ textDecoration: 'none' }} to={'products'}>
+        <div className='products p-3 pt-5 p-md-5 m-4' >
+          <Typography variant="h3" style={{ textShadow: " 1px  1px     #fff, -1px  1px     #fff, 1px -1px     #fff, -1px -1px     #fff, 1px  1px 5px #555"
+      }}>Products</Typography>
+         
         </div>
       </Link>
 
       <Link style={{ textDecoration: 'none' }} to={'customers'} >
-        <div className='customers'>
+        <div className='customers p-3 pt-5 p-md-5 m-4'>
           <Typography variant="h3" color='white' style={{ textShadow: "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000" }} outline>Customers</Typography>
         </div>
       </Link>
 
       <Link style={{ textDecoration: 'none' }} to={'purchased'}>
-        <div className='purchases'>
+        <div className='purchases p-3 pt-5 p-md-5 m-4'>
           <Typography variant="h3" color='white' style={{ textShadow: "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000" }}>Purchases</Typography>
         </div>
       </Link>
