@@ -33,8 +33,8 @@ export default function Customers() {
 
   return (
     <Container>
-      <div className='customer'>
-        <Typography variant="h3" >Customers</Typography>
+      <div className='customer p-2 py-4 p-md-5 my-3 mx-md-5'>
+        <Typography className='px-2' variant="h3" >Customers</Typography>
         <br />
         <Table striped bordered hover size="md">
           <thead>

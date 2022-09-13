@@ -41,7 +41,7 @@ export default function AllCustomers(props) {
         let customerId = item.customerId
         let itemDate = item.date
         return <div key={index} className='customerPurchases'>
-          <div style={{display:"flex", justifyContent:"space-between", padding:"0rem 2rem"}}>
+          <div className='d-flex justify-content-between p-1 p-md-4 m-2 mx-md-5'>
             <div>
               <h4>Customer ID: {item.customerId}</h4>
               <p><strong>Purchased Date: </strong> {item.date}</p>
@@ -52,8 +52,8 @@ export default function AllCustomers(props) {
           </div>
           {showProducts && <div> {storeData.products.map((item, index) => {
             return (
-              <div key={index} className='product'>
-                <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div key={index} className='product p-4 p-md-5 my-3'>
+                <div className='d-md-flex justify-content-between'>
                   <div>
                     <strong>Product Name: </strong><Link to={`/editProduct/${item.id}`}>{item.name}</Link>
                     <p><strong>Product Price: </strong>{item.price}</p>

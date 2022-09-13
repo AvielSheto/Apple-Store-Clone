@@ -59,7 +59,7 @@ export default function Purchased() {
 
   return (
     <Container>
-      <div className='purchased' >
+      <div className='purchased p-3 p-md-5 my-3 m-2 mx-md-5' >
         <Typography variant="h3" >Purchased Search</Typography>
         <br />
         <FormControl fullWidth>
@@ -104,8 +104,8 @@ export default function Purchased() {
       </div>
 
       {result.customers &&
-        <div className='purchased'>
-          <h1>results</h1>
+        <div className='purchased p-3 p-md-5'>
+          <h1>Results</h1>
           <br />
           <Table striped bordered hover size="md">
             <thead>
