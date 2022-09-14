@@ -11,8 +11,8 @@ export default function TotalPurchases() {
     }, [storeData.purchases.length]);
 
   return (
-    <div style={{float:"right" ,width:"19rem" , borderRadius:"8px",backgroundColor:"black", opacity:"0.6", textAlign:"center", color:"white" }}>
-    <h2>Total Purchased : {total}</h2>
+    <div style={{ float:"right", borderRadius:"8px",backgroundColor:"black", opacity:"0.6", textAlign:"center", color:"white" }}>
+    <h2 className='p-1'>Total Purchased: {total}</h2>
     </div>
   )
 }

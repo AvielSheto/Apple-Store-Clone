@@ -17,9 +17,9 @@ export default function Products() {
     return (
         <div>
             <Container>
-                <div className='allProducts p-1 p-md-3 p-md-3 m-2 mx-md-5' >
-                    <Typography style={{textAlign: 'left'}} variant="h4" >All Products</Typography>
-                    <TotalPurchases />
+                <div className='allProducts p-1 p-md-3 m-2 mx-md-5 d-flex justify-content-between' >
+                    <Typography className='pe-1 text-black' variant="h4" >Products</Typography>
+                    <TotalPurchases/>
                 </div>
 
                 {storeData.products.map((item, index) => {
@@ -28,7 +28,7 @@ export default function Products() {
                         <div className='product p-4 p-md-5 my-3'>
                             <div className='d-flex justify-content-between'>
                                 <Typography style={{ textAlign: 'left' }} variant="h4" >Product ID: {item.id}</Typography>
-                                <Divider/>
+                                <Divider />
                                 <Link to={`/editProduct/${item.id}`}><Fab size="medium" color="primary" aria-label="edit"><EditIcon /></Fab></Link>
                             </div>
                             <br />
@@ -47,7 +47,7 @@ export default function Products() {
                         <div className='product p-3' >
                             <Typography style={{ textAlign: 'left' }} variant="h4" >Product Purchases: </Typography>
                             <br />
-                            <AllCustomers id={ProductId}/>
+                            <AllCustomers id={ProductId} />
                             <br />
                         </div>
                     </div>
