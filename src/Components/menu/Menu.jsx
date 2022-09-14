@@ -10,7 +10,7 @@ export default function Menu() {
     <Container  >
       <Link style={{ textDecoration: 'none' }} to={'products'}>
         <div className='products p-3 pt-5 p-md-5 m-4' >
-          <Typography variant="h3" style={{ textShadow: " 1px  1px     #fff, -1px  1px     #fff, 1px -1px     #fff, -1px -1px     #fff"
+          <Typography variant="h3" style={{ textShadow: "1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff"
       }}>Products</Typography>
          
         </div>

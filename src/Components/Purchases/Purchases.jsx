@@ -50,7 +50,6 @@ export default function Purchased() {
       console.log("search all");
       setResult({ ...storeData })
     }
-
   }
 
   const handleChange = (e) => {

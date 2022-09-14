@@ -12,7 +12,6 @@ import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
 import Divider from '@mui/material/Divider';
 
-
 export default function Products() {
     const storeData = useSelector((state) => state);
     return (
@@ -39,7 +38,6 @@ export default function Products() {
                                     <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product ID: </strong>{item.name}</Typography>
                                     <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product Price: </strong>{item.price}</Typography>
                                     <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Quantity: </strong>{item.quantity}</Typography>
-
                                 </div>
                                 <div>
                                     <img className='align-content-md-center mx-5 mx-md-0' style={{ height: "12rem", width: "16rem" }} src={item.img} alt="product" />

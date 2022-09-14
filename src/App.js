@@ -36,7 +36,7 @@ export default function App() {
   return (
     <div>
       <BrowserRouter >
-        <Navbar style={{ padding: "0.1rem", display: "flex", alignItems: "center", backgroundColor:"rgba(0, 0, 0, 0.850)", }} expand="lg" variant="dark">
+        <Navbar style={{ padding: "0", display: "flex", alignItems: "center", backgroundColor:"rgba(0, 0, 0, 0.850)", }} expand="lg" variant="dark">
           <Container >
             <Navbar.Toggle style={{border:"none"}} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav" >
@@ -48,10 +48,10 @@ export default function App() {
                   <Link to={'/products'} className='link' >Products</Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link to={'/customers'} className='link'>{/* <PeopleRoundedIcon /> */}Costumers</Link>
+                  <Link to={'/customers'} className='link'>Costumers</Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link to={'/purchased'} className='link'>{/* <ShoppingCartIcon /> */}Purchases</Link>
+                  <Link to={'/purchased'} className='link'>Purchases</Link>
                 </Nav.Link>
                 <NavDropdown style={{ color: "white" }} title="Account" id="basic-nav-dropdown">
                   <NavDropdown.Item href="/signIn">Sign In</NavDropdown.Item>
