@@ -36,7 +36,7 @@ export default function SignUp() {
   };
 
   return (
-    <Container className='form' component="main" maxWidth="xs">
+    <Container className='form p-5 my-4' maxWidth="xs">
       <Box
         sx={{
           marginTop: 8,
