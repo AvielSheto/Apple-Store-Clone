@@ -41,7 +41,7 @@ export default function AllCustomers(props) {
         let customerId = item.customerId
         let itemDate = item.date
         return <div key={index} className='customerPurchases'>
-          <div className='d-flex justify-content-between p-1 p-md-4 m-2 mx-md-5'>
+          <div className='d-flex justify-content-between py-1 py-md-1 m-2 mx-md-5'>
             <div>
               <h4>Customer ID: {item.customerId}</h4>
               <p><strong>Purchased Date: </strong> {item.date}</p>
