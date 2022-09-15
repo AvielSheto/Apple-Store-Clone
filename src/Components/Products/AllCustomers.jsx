@@ -44,7 +44,7 @@ export default function AllCustomers(props) {
           <div className='d-flex justify-content-between py-1 py-md-1 m-2 mx-md-5'>
             <div>
               <h4>Customer ID: {item.customerId}</h4>
-              <p><strong>Purchased Date: </strong> {item.date}</p>
+              <p><strong>Purchased Date: </strong>{item.date}</p>
             </div>
             <div>
               <Link to={`/editCustomer/${item.customerId}`}><Fab size='small' color="primary" aria-label="edit"><EditIcon /></Fab></Link>
