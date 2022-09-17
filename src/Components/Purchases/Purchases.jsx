@@ -103,7 +103,7 @@ export default function Purchased() {
       </div>
 
       {result.customers &&
-        <div className='purchased p-3 p-md-5'>
+        <div className='purchased p-3 p-md-5 my-3 m-2 mx-md-5'>
           <h1>Results</h1>
           <br />
           <Table striped bordered hover size="md">
@@ -121,7 +121,6 @@ export default function Purchased() {
                     <td >{customer.customerId}</td>
                     <td>{customer.productId}</td>
                     <td>{customer.date}</td>
-                    
                   </tr>
                 )
               })}
