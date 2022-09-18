@@ -58,8 +58,8 @@ export default function Purchased() {
 
   return (
     <Container>
-      <div className='purchased p-3 p-md-5 my-3 m-2 mx-md-5' >
-        <Typography variant="h3" >Purchased Search</Typography>
+      <div className='purchased p-3 p-md-5 my-3 my-1 mx-md-5' >
+        <Typography className='w-100' variant="h4" >Purchased Search</Typography>
         <br />
         <FormControl fullWidth>
           <InputLabel >Product</InputLabel>

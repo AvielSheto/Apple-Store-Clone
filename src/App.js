@@ -10,10 +10,10 @@ import Purchased from "./Components/Purchases/Purchases";
 import SignIn from "./Components/sign/SignIn";
 import SignUp from "./Components/sign/SignUp";
 import Loading from "./Components/sign/Loading";
+import '././Components/menu/menu_style.scss';
 // mui
 import AppleIcon from "@mui/icons-material/Apple";
 import Avatar from '@mui/material/Avatar';
-import '././Components/menu/menu_style.scss'
 // bootstrap
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";

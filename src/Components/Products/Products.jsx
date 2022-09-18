@@ -17,14 +17,14 @@ export default function Products() {
     return (
         <div>
             <Container>
-                <div className='allProducts p-1 p-md-3 m-2 mx-md-5 d-flex justify-content-between' >
+                <div className='allProducts p-2 p-md-3 my-1 mx-md-5 d-flex justify-content-between' >
                     <Typography className='pe-1 text-black' variant="h4" >Products</Typography>
                     <TotalPurchases/>
                 </div>
 
                 {storeData.products.map((item, index) => {
                     let ProductId = item.id
-                    return (<div key={index} className="product p-2 p-md-4 m-2 mx-md-5">
+                    return (<div key={index} className="product p-2 p-md-4 my-1 mx-md-5">
                         <div className='product p-4 p-md-5 my-3'>
                             <div className='d-flex justify-content-between'>
                                 <Typography style={{ textAlign: 'left' }} variant="h4" >Product ID: {item.id}</Typography>
