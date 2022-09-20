@@ -74,6 +74,7 @@ export default function Customers() {
           </tbody>
         </Table>
       </div>
+      
       {showProduct && <div className='customer'>
         {showProduct && <Typography style={{ textAlign: 'center' }} variant="h3" >Add Product To Customer: {product.customerId}</Typography>}
         {showProduct && storeData.products.map((item, index) => {

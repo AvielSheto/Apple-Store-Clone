@@ -10,18 +10,14 @@ export default function Menu() {
     <Container  >
       <Link style={{ textDecoration: 'none' }} to={'products'}>
         <div className='products p-3 pt-5 p-md-5 m-4' >
-          <Typography variant="h3" style={{ textShadow: "1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff"
-      }}>Products</Typography>
-         
+          <Typography variant="h3" style={{ textShadow: "1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff" }}>Products</Typography>
         </div>
       </Link>
-
       <Link style={{ textDecoration: 'none' }} to={'customers'} >
         <div className='customers p-3 pt-5 p-md-5 m-4'>
           <Typography variant="h3" color='white' style={{ textShadow: "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000" }} outline>Customers</Typography>
         </div>
       </Link>
-
       <Link style={{ textDecoration: 'none' }} to={'purchased'}>
         <div className='purchases p-3 pt-5 p-md-5 m-4'>
           <Typography variant="h3" color='white' style={{ textShadow: "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000" }}>Purchases</Typography>
