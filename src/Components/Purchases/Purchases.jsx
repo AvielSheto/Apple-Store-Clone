@@ -83,10 +83,9 @@ export default function Purchased() {
         </FormControl>
         <br />
         <br />
-
         <Stack component="form" noValidate spacing={3}>
           <TextField
-          onChange={handleChange}
+            onChange={handleChange}
             id="date"
             label="date"
             name='date'
@@ -96,12 +95,10 @@ export default function Purchased() {
               shrink: true,
             }}
           />
-
         </Stack>
         <br />
         <Button onClick={search} variant='contained'>Search</Button>
       </div>
-
       {result.customers &&
         <div className='purchased p-3 p-md-5 my-3 m-2 mx-md-5'>
           <h1>Results</h1>
