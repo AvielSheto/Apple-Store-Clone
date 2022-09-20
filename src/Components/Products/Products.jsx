@@ -21,7 +21,6 @@ export default function Products() {
                     <Typography className='pe-1 text-black' variant="h4" >Products</Typography>
                     <TotalPurchases/>
                 </div>
-
                 {storeData.products.map((item, index) => {
                     let ProductId = item.id
                     return (<div key={index} className="product p-2 p-md-4 my-1 mx-md-5">
