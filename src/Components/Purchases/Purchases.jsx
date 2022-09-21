@@ -17,9 +17,9 @@ import Table from 'react-bootstrap/Table';
 
 export default function Purchased() {
   const storeData = useSelector(state => state);
-  const [searchData, setSearchData] = useState({ product: "", customer: "", date: "" })
+  const [searchData, setSearchData] = useState({ product: "", customer: "", date: "" });
   const [result, setResult] = useState([]);
-
+  
   const search = () => {
     if (searchData.product !== "" && searchData.customer === "" && searchData.date === "") {
       console.log("search product only");
@@ -48,12 +48,12 @@ export default function Purchased() {
       setResult({ ...storeData, purchases: filteredPurchases });
     } else {
       console.log("search all");
-      setResult({ ...storeData })
+      setResult({ ...storeData });
     }
   }
 
   const handleChange = (e) => {
-    setSearchData({ ...searchData, [e.target.name]: e.target.value })
+    setSearchData({ ...searchData, [e.target.name]: e.target.value });
   }
 
   return (
