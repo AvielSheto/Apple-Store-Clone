@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // mui
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import './menu_style.scss'
+import './menu_style.scss';
 
 export default function Menu() {
   return (
