@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 // style scss
-import './_purchased_style.scss'
+import './_purchased_style.scss';
 // mui
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
