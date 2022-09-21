@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 // mui
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import TotalPurchases from './TotalPurchases';
 // style scss
-import './_products.scss'
+import './_products.scss';
 // mui
 import Typography from '@mui/material/Typography';
 import AllCustomers from './AllCustomers';
