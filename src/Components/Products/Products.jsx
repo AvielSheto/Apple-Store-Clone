@@ -25,17 +25,16 @@ export default function Products() {
                     return (<div key={index} className="product p-2 p-md-4 my-1 mx-md-5">
                         <div className='product p-4 p-md-5 my-3'>
                             <div className='d-flex justify-content-between pb-3'>
-                                <p className='display-6'>Product ID: {item.id}</p>
+                                <p className='display-5'>Product ID: {item.id}</p>
                                 <Link to={`/editProduct/${item.id}`}><Fab size="medium" color="primary" aria-label="edit"><EditIcon /></Fab></Link>
                             </div>
                                 <hr style={{width:"100%" ,textAlign:"center"}}/>
                             <br />
                             <div className='d-md-flex justify-content-between'>
-                                <div>
-                                    <br />
-                                    <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product ID: </strong>{item.name}</Typography>
-                                    <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product Price: </strong>{item.price}</Typography>
-                                    <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Quantity: </strong>{item.quantity}</Typography>
+                                <div>         
+                                    <p className='display-6 fs-3'><strong>Product ID: </strong>{item.name}</p>                           
+                                    <p className='display-6 fs-3'><strong>Product Price: </strong>{item.price}</p>                           
+                                    <p className='display-6 fs-3'><strong>Quantity: </strong>{item.quantity}</p>                           
                                 </div>
                                 <div>
                                     <img className='align-content-md-center mx-5 mx-md-0' style={{ height: "12rem", width: "16rem" }} src={item.img} alt="product" />
@@ -43,8 +42,7 @@ export default function Products() {
                             </div>
                         </div>
                         <div className='product p-3' >
-                            <Typography style={{ textAlign: 'left' }} variant="h4" >Product Purchases: </Typography>
-                            <br />
+                            <p className='display-4 px-3'>Product Purchases:</p>
                             <AllCustomers id={ProductId} />
                             <br />
                         </div>
