@@ -17,7 +17,7 @@ export default function Products() {
     return (
         <div>
             <Container>
-                <div className='allProducts p-2 p-md-3 my-1 mx-md-5 d-flex justify-content-between' >
+                <div className='allProducts p-2 p-md-3 my-1 mx-md-5 d-flex justify-content-between align-items-center' >
                     <Typography className='pe-1 text-black' variant="h4" >Products</Typography>
                     <TotalPurchases/>
                 </div>
