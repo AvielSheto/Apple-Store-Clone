@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 // mui
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 export default function TotalPurchases() {
     const [total, setTotal] = useState(0)
@@ -11,8 +12,8 @@ export default function TotalPurchases() {
     }, [storeData.purchases.length]);
 
   return (
-    <div style={{ float:"right", borderRadius:"8px",backgroundColor:"black", opacity:"0.6", textAlign:"center", color:"white" }}>
-    <h2 className='p-1'>Total Purchased: {total}</h2>
+    <div style={{float:"right", borderRadius:"30%",backgroundColor:"black",  textAlign:"center", color:"white" }}>
+    <h4 className='p-3 para-6'><ShoppingBagIcon color="primary" fontSize="large"/> {total}</h4>
     </div>
   )
 }
