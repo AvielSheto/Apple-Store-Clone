@@ -34,7 +34,7 @@ export default function Customers() {
   return (
     <Container>
       <div className='customer p-2 py-4 p-md-5 my-3 mx-md-5'>
-        <Typography className='px-2' variant="h4" >Customers</Typography>
+        <p className='display-5 '>Customers</p>
         <br />
         <Table striped bordered hover size="md">
           <thead>
@@ -74,21 +74,23 @@ export default function Customers() {
           </tbody>
         </Table>
       </div>
-      
-      {showProduct && <div className='customer'>
-        {showProduct && <Typography style={{ textAlign: 'center' }} variant="h3" >Add Product To Customer: {product.customerId}</Typography>}
+
+      {showProduct && <div className='customer p-2 py-4 p-md-5 my-3 mx-md-5'>
+        {showProduct && <p className='display-4 px-5'>Add Product To Customer: {product.customerId}</p>}
+
+
         {showProduct && storeData.products.map((item, index) => {
           return (
-            <div className='customer' key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div className='customer ' key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
+              <div className='d-md-flex justify-content-between'>
                 <div>
-                  <h3 style={{ textAlign: 'center' }}>Product ID: {item.id}</h3>
-                  <p><strong>Product Name: </strong><Link to={`/editProduct/${item.id}`}>{item.name}</Link></p>
-                  <p><strong>Product Price: </strong>{item.price}</p>
-                  <p><strong>Quantity: </strong>{item.quantity}</p>
+                  <br />
+                  <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product ID: </strong>{item.name}</Typography>
+                  <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product Price: </strong>{item.price}</Typography>
+                  <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Quantity: </strong>{item.quantity}</Typography>
                 </div>
                 <div>
-                  <img style={{ height: "12rem", width: "16rem" }} src={item.img} alt="" />
+                  <img className='align-content-md-center mx-5 mx-md-0' style={{ height: "12rem", width: "16rem" }} src={item.img} alt="product" />
                 </div>
               </div>
               <Button onClick={() => { setProduct({ ...product, productId: item.id, date: `${today}` }) }} variant='contained'>Add</Button>

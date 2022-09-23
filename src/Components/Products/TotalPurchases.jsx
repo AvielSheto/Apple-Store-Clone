@@ -12,7 +12,7 @@ export default function TotalPurchases() {
     }, [storeData.purchases.length]);
 
   return (
-    <div style={{float:"right", borderRadius:"30%",backgroundColor:"black",  textAlign:"center", color:"white" }}>
+    <div style={{float:"right", borderRadius:"20%",backgroundColor:"black",  textAlign:"center", color:"white" }}>
     <h4 className='p-3 para-6'><ShoppingBagIcon color="primary" fontSize="large"/> {total}</h4>
     </div>
   )
