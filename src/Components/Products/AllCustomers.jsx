@@ -43,8 +43,8 @@ export default function AllCustomers(props) {
         return <div key={index} className='customerPurchases'>
           <div className='d-flex justify-content-between py-1 1 m-2 mx-md-5'>
             <div>
-              <h4>Customer ID: {item.customerId}</h4>
-              <p><strong>Purchased Date: </strong>{item.date}</p>
+              <p className='display-6 fs-1'>Customer ID: {item.customerId}</p>
+              <p className='display-6 fs-5'><strong>Purchased Date: </strong>{item.date}</p>
             </div>
             <div>
               <Link to={`/editCustomer/${item.customerId}`}><Fab size='small' color="primary" aria-label="edit"><EditIcon /></Fab></Link>

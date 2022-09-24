@@ -5,7 +5,6 @@ import TotalPurchases from './TotalPurchases';
 // style scss
 import './_products.scss';
 // mui
-import Typography from '@mui/material/Typography';
 import AllCustomers from './AllCustomers';
 import Container from '@mui/material/Container';
 import Fab from '@mui/material/Fab';
@@ -30,7 +29,7 @@ export default function Products() {
                             </div>
                                 <hr style={{width:"100%" ,textAlign:"center"}}/>
                             <br />
-                            <div className='d-md-flex justify-content-between'>
+                            <div className='product p-2 p-md-4 d-md-flex justify-content-between'>
                                 <div>         
                                     <p className='display-6 fs-3'><strong>Product ID: </strong>{item.name}</p>                           
                                     <p className='display-6 fs-3'><strong>Product Price: </strong>{item.price}</p>                           
