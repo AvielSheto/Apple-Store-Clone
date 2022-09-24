@@ -35,8 +35,8 @@ export default function EditCustomer() {
 
     return (
         <Container>
-            <div className='customer'>
-                <Typography variant="h3" >Edit Customer</Typography>
+            <div className='customer p-4 p-md-5 my-3 mx-md-5'>
+                <p className='display-4 fw-normal'>Edit Customer</p>
                 <br />
                 <h3>Customer ID : {id}</h3>
 
@@ -50,9 +50,9 @@ export default function EditCustomer() {
 
                 <Form>
                     <br />
-                    <div style={{ display: 'flex', justifyContent: "space-evenly", padding: "0px 30%" }}>
-                        <Button onClick={updateCustomer} variant="contained" endIcon={<DriveFileRenameOutlineIcon />}>Update</Button>
-                        <Button onClick={deleteCustomer} variant="outlined" startIcon={<DeleteIcon />}>Delete</Button>
+                    <div className='d-flex justify-content-center'>
+                        <Button className='mx-2' onClick={updateCustomer} variant="contained" endIcon={<DriveFileRenameOutlineIcon />}>Update</Button>
+                        <Button className='mx-2' onClick={deleteCustomer} variant="outlined" startIcon={<DeleteIcon />}>Delete</Button>
                     </div>
                 </Form>
             </div>
