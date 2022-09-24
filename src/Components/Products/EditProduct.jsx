@@ -46,9 +46,9 @@ export default function EditProduct() {
 
     return (
         <Container >
-            <div className="product" >
-                <h1 style={{ textAlign: "center" }}>Edit Product</h1>
-                <h4>Updating product ID: {id} </h4>
+            <div className="product p-4 p-md-5 my-3 mx-md-5" >
+                    <p className='display-4 fw-normal'>Edit Product</p>
+                    <p className='display-6 fs-1'>Updating product ID: {id} </p>
                 <br />
                 <div style={{ display: 'flex', flexDirection: "column" }}>
                     <TextField onChange={handleChange} name='name' label="Name:" variant="outlined" />
@@ -56,14 +56,14 @@ export default function EditProduct() {
                     <TextField onChange={handleChange} name='price' label="Price:" variant="outlined" />
                 </div>
                 <br />
-                <div style={{ display: 'flex', justifyContent: "space-evenly", padding: "0px 30%" }}>
+                <div>
                     <Button onClick={updateProduct} variant="contained" endIcon={<DriveFileRenameOutlineIcon/>}>Update</Button>
                     <Button onClick={deleteProduct} variant="outlined" startIcon={<DeleteIcon/>}>Delete</Button>
                 </div>
             </div>
 
-            <div className="product">
-                <h3 style={{ textAlign: 'center' }}>Purchases History</h3>
+            <div className="product p-4 p-md-5 my-3 mx-md-5">
+                <p className='display-4 '>Purchases History</p>
                 {storeData.purchases.filter(purchases => purchases.productId === id).map((Purchase, index) => {
                     return (<div key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "10px" }}>
                         <p><strong>Customer ID: </strong><Link to={`/editCustomer/${Purchase.customerId}`}>{Purchase.customerId}</Link></p>
