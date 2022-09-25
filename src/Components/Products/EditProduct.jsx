@@ -71,18 +71,18 @@ export default function EditProduct() {
                     <Table striped bordered hover size="md">
                         <thead>
                             <tr>
+                                <th>purchase ID</th>
                                 <th>Customer ID</th>
-                                <th>Product ID</th>
                                 <th>Purchase Date</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {storeData.purchases.filter(purchases => purchases.productId === id)?.map((customer, index) => {
+                            {storeData.purchases.filter(purchases => purchases.productId === id)?.map((purchase, index) => {
                                 return (
                                     <tr key={index}>
-                                        <td >{customer.customerId}</td>
-                                        <td>{customer.productId}</td>
-                                        <td>{customer.date}</td>
+                                        <td>{purchase.id}</td>
+                                        <td><Link to={`/editProduct/${purchase.customerId}`}> {purchase.customerId}</Link></td>
+                                        <td>{purchase.date}</td>
                                     </tr>
                                 )
                             })}
