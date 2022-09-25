@@ -11,7 +11,6 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 // bootstrap
 import Table from 'react-bootstrap/Table';
 
@@ -101,8 +100,7 @@ export default function Purchased() {
       </div>
       {result.customers &&
         <div className='purchased p-4 p-md-5 my-3 mx-md-5'>
-          <h1>Results</h1>
-          <br />
+          <p className='display-5'>Results</p>
           <Table striped bordered hover size="md">
             <thead>
               <tr>
