@@ -18,18 +18,18 @@ export default function EditCustomer() {
     const storeData = useSelector(state => state)
     const { id } = useParams();
     const dispatch = useDispatch()
-    const [customer, setCustomer] = useState({id: id, first:"", last:"", city:""});
+    const [customer, setCustomer] = useState({ id: id, first: "", last: "", city: "" });
 
-    const updateCustomer = ()=>{
+    const updateCustomer = () => {
         const action = { type: "UPDATECUSTOMER", payload: customer }
         dispatch(action)
     }
-    const deleteCustomer = ()=>{
+    const deleteCustomer = () => {
         const action = { type: "DELETECUSTOMER", payload: customer.id }
         dispatch(action)
     }
 
-    const handleChange = (e)=>{
+    const handleChange = (e) => {
         setCustomer({ ...customer, [e.target.name]: e.target.value })
     }
 
@@ -57,12 +57,12 @@ export default function EditCustomer() {
 
             <div className='customer p-4 p-md-5 my-3 mx-md-5' >
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <p className='display-4'>purchases History</p>
+                    <p className='display-4'>purchases History</p>
                 </div>
 
                 {storeData.purchases.filter(purchases => purchases.customerId === id).map((Purchase, index) => {
                     return (<div key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "10px" }}>
-                        <Link style={{float:"right"}} to={`/editProduct/${Purchase.productId}`}><Fab color="info" aria-label="edit"><EditIcon /></Fab></Link>
+                        <Link style={{ float: "right" }} to={`/editProduct/${Purchase.productId}`}><Fab color="info" aria-label="edit"><EditIcon /></Fab></Link>
                         <p><strong>Product ID: </strong><Link to={`/editProduct/${Purchase.productId}`}>{Purchase.productId}</Link></p>
                         <p><strong>Purchase Date: </strong>{Purchase.date}</p>
                     </div>)
