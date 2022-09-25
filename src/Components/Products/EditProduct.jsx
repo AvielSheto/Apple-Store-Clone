@@ -89,13 +89,7 @@ export default function EditProduct() {
                         </tbody>
                     </Table>
                 </div>
-
-
-
             </div>
-
-
-
             <br />
             <br />
 

@@ -4,15 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 // bootstrap
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Table from 'react-bootstrap/Table';
 // mui
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
-import Fab from '@mui/material/Fab';
-import EditIcon from '@mui/icons-material/Edit';
 
 export default function EditCustomer() {
     const storeData = useSelector(state => state)
@@ -60,14 +58,31 @@ export default function EditCustomer() {
                     <p className='display-4'>purchases History</p>
                 </div>
 
-                {storeData.purchases.filter(purchases => purchases.customerId === id).map((Purchase, index) => {
-                    return (<div key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "10px" }}>
-                        <Link style={{ float: "right" }} to={`/editProduct/${Purchase.productId}`}><Fab color="info" aria-label="edit"><EditIcon /></Fab></Link>
-                        <p><strong>Product ID: </strong><Link to={`/editProduct/${Purchase.productId}`}>{Purchase.productId}</Link></p>
-                        <p><strong>Purchase Date: </strong>{Purchase.date}</p>
-                    </div>)
-                })}
+                <div className='purchased p-3 p-md-5 my-3 m-2 mx-md-5'>        
+                    <Table striped bordered hover size="md">
+                        <thead>
+                            <tr>
+                                <th>purchase ID</th>
+                                <th>Product ID</th>
+                                <th>Purchase Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {storeData.purchases.filter(purchases => purchases.customerId === id)?.map((purchase, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td >{purchase.id}</td>
+                                        <td><Link to={`/editProduct/${purchase.productId}`}>{purchase.productId}</Link></td>
+                                        <td>{purchase.date}</td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </Table>
+                </div>
+
             </div>
+
             <br />
             <br />
         </Container>
