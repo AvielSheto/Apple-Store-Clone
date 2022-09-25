@@ -36,10 +36,8 @@ export default function EditCustomer() {
     return (
         <Container>
             <div className='customer p-4 p-md-5 my-3 mx-md-5'>
-                <p className='display-4 fw-normal'>Edit Customer</p>
-                <br />
-                <h3>Customer ID : {id}</h3>
-
+                <p className='display-3 fw-normal'>Edit Customer</p>
+                <p className='display-6 fs-1'>Customer ID: {id}</p>
                 <div style={{ display: 'flex', flexDirection: "column" }}>
                     <TextField onChange={handleChange} name='first' label="First Name:" variant="outlined" />
                     <br />
@@ -57,9 +55,9 @@ export default function EditCustomer() {
                 </Form>
             </div>
 
-            <div className='customer' >
+            <div className='customer p-4 p-md-5 my-3 mx-md-5' >
                 <div style={{ display: "flex", justifyContent: "space-between" }}>
-                    <Typography variant="h4">purchases History</Typography>
+                <p className='display-4'>purchases History</p>
                 </div>
 
                 {storeData.purchases.filter(purchases => purchases.customerId === id).map((Purchase, index) => {
