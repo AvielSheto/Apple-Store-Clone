@@ -61,9 +61,9 @@ export default function EditCustomer() {
                 <Table striped bordered hover size="md">
                     <thead>
                         <tr>
-                            <th>purchase ID</th>
-                            <th>Product ID</th>
-                            <th>Purchase Date</th>
+                            <th className='display-6 fs-5 fw-normal'>purchase ID</th>
+                            <th className='display-6 fs-5 fw-normal'>Product ID</th>
+                            <th className='display-6 fs-5 fw-normal'>Purchase Date</th>
                         </tr>
                     </thead>
                     <tbody>

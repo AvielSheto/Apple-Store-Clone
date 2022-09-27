@@ -34,15 +34,15 @@ export default function Customers() {
   return (
     <Container>
       <div className='customer p-1 p-sm-4 my-3 mx-md-5'>
-        <p className='display-4 '>Customers</p>
+        <p className='display-4'>Customers</p>
         <br />
         <Table striped bordered hover size="md">
           <thead>
             <tr>
-              <th>Customer Name</th>
-              <th>Product ID</th>
-              <th>Purchase Date</th>
-              <th>Add Product</th>
+              <th className='display-6 fs-5 fw-semibold'>Customer Name</th>
+              <th className='display-6 fs-5 fw-semibold'>Product ID</th>
+              <th className='display-6 fs-5 fw-semibold'>Purchase Date</th>
+              <th className='display-6 fs-5 fw-semibold'>Add Product</th>
             </tr>
           </thead>
           <tbody>

@@ -66,13 +66,13 @@ export default function EditProduct() {
             </div>
 
             <div className="product p-4 p-md-5 my-3 mx-md-5">
-                <p className='display-4 '>Purchases History</p>
+                <p className='display-4 fw-normal'>Purchases History</p>
                 <Table striped bordered hover size="md">
                     <thead>
                         <tr>
-                            <th>purchase ID</th>
-                            <th>Customer ID</th>
-                            <th>Purchase Date</th>
+                            <th className='display-6 fs-5 fw-normal'>purchase ID</th>
+                            <th className='display-6 fs-5 fw-normal'>Customer ID</th>
+                            <th className='display-6 fs-5 fw-normal'>Purchase Date</th>
                         </tr>
                     </thead>
                     <tbody>
