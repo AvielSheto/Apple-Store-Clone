@@ -55,9 +55,9 @@ export default function AllCustomers(props) {
               <div key={index} className='product p-4 p-md-5 my-3 mx-3'>
                 <div className='d-md-flex justify-content-between'>
                   <div >
-                    <p><strong className='display-6 fs-3 fw-normal'>Product Name: <Link to={`/editProduct/${item.id}`}>{item.name}</Link></strong></p>
-                    <p><strong className='display-6 fs-3 fw-normal'>Product Price: </strong>{item.price}</p>
-                    <p><strong className='display-6 fs-3 fw-normal'>Quantity: </strong>{item.quantity}</p>
+                    <p className='display-6 fs-5'><strong className='fs-3'>Product ID: </strong>{item.name}</p>
+                    <p className='display-6 fs-5'><strong className='fs-3'>Product Price: </strong>{item.price}</p>
+                    <p className='display-6 fs-5'><strong className='fs-3'>Quantity: </strong>{item.quantity}</p>
                   </div>
                   <div>
                     <img style={{ height: "12rem", width: "16rem" }} src={item.img} alt="" />

@@ -15,7 +15,7 @@ export default function Products() {
     return (
         <div>
             <Container>
-                <div className='allProducts p-1 p-md-3 my-1 mx-md-5 d-flex justify-content-between align-items-center' >
+                <div className='allProducts p-1 p-md-3 my-3 mx-md-5 d-flex justify-content-between align-items-center' >
                     <p className='display-4 px-4'>Products</p>
                     <TotalPurchases />
                 </div>
@@ -31,9 +31,9 @@ export default function Products() {
                             <br />
                             <div className='product p-2 p-md-4 d-md-flex justify-content-between'>
                                 <div>         
-                                    <p className='display-6 fs-3'><strong>Product ID: </strong>{item.name}</p>                           
-                                    <p className='display-6 fs-3'><strong>Product Price: </strong>{item.price}</p>                           
-                                    <p className='display-6 fs-3'><strong>Quantity: </strong>{item.quantity}</p>                           
+                                    <p className='display-6 fs-5'><strong className='fs-3'>Product ID: </strong>{item.name}</p>                           
+                                    <p className='display-6 fs-5'><strong className='fs-3'>Product Price: </strong>{item.price}</p>                           
+                                    <p className='display-6 fs-5'><strong className='fs-3'>Quantity: </strong>{item.quantity}</p>                           
                                 </div>
                                 <div>
                                     <img className='align-content-md-center mx-5 mx-md-0' style={{ height: "12rem", width: "16rem" }} src={item.img} alt="product" />
