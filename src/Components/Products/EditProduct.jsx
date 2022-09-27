@@ -67,28 +67,26 @@ export default function EditProduct() {
 
             <div className="product p-4 p-md-5 my-3 mx-md-5">
                 <p className='display-4 '>Purchases History</p>
-                <div className='purchased p-3 p-md-5 my-3 m-2 mx-md-5'>        
-                    <Table striped bordered hover size="md">
-                        <thead>
-                            <tr>
-                                <th>purchase ID</th>
-                                <th>Customer ID</th>
-                                <th>Purchase Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {storeData.purchases.filter(purchases => purchases.productId === id)?.map((purchase, index) => {
-                                return (
-                                    <tr key={index}>
-                                        <td>{purchase.id}</td>
-                                        <td><Link to={`/editProduct/${purchase.customerId}`}> {purchase.customerId}</Link></td>
-                                        <td>{purchase.date}</td>
-                                    </tr>
-                                )
-                            })}
-                        </tbody>
-                    </Table>
-                </div>
+                <Table striped bordered hover size="md">
+                    <thead>
+                        <tr>
+                            <th>purchase ID</th>
+                            <th>Customer ID</th>
+                            <th>Purchase Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {storeData.purchases.filter(purchases => purchases.productId === id)?.map((purchase, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{purchase.id}</td>
+                                    <td><Link to={`/editProduct/${purchase.customerId}`}> {purchase.customerId}</Link></td>
+                                    <td>{purchase.date}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </Table>
             </div>
             <br />
             <br />
