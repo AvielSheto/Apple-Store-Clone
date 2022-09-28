@@ -14,12 +14,12 @@ export default function Menu() {
       </Link>
       <Link style={{ textDecoration: 'none'}} to={'customers'} >
         <div className='customers p-3 pt-5 p-md-5 m-4 d-flex'>
-          <p className='display-3 text-white fw-normal' style={{ textShadow: "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000" }}>Customers</p>
+          <p className='display-3 text-white fw-normal' style={{ textShadow: "2px 2px 4px #000000" }}>Customers</p>
         </div>
       </Link>
       <Link style={{ textDecoration: 'none' }} to={'purchased'}>
         <div className='purchases p-3 pt-5 p-md-5 m-4'>
-          <p className='display-3 text-white fw-normal' style={{ textShadow: "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000" }}>Purchases</p>
+          <p className='display-3 text-white fw-normal' style={{ textShadow: "2px 2px 4px #000000" }}>Purchases</p>
         </div>
       </Link>
     </Container>
