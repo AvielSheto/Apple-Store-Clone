@@ -23,13 +23,13 @@ export default function Products() {
                     let ProductId = item.id
                     return (<div key={index} className="product p-2 p-md-4 my-1 mx-md-5">
                         <div className='product p-4 p-md-5 my-3'>
-                            <div className='d-flex justify-content-between pb-2'>
+                            <div className='d-flex justify-content-between'>
                                 <p className='display-6 fs-4'> <strong className='display-6 fw-normal fs-2'>Product ID: </strong>{item.id}</p>
-                                <Link to={`/editProduct/${item.id}`}><Fab size="medium" color="primary" aria-label="edit"><EditIcon /></Fab></Link>
+                                <Link to={`/editProduct/${item.id}`}><Fab size="small" color="primary" aria-label="edit"><EditIcon /></Fab></Link>
                             </div>
                                 <hr style={{width:"100%" ,textAlign:"center"}}/>
-                            <div className='product p-2 p-md-4 d-md-flex justify-content-between'>
-                                <div>         
+                            <div className='product p-2 p-md-4 d-sm-flex justify-content-between'>
+                                <div className='p-1'>         
                                     <p className='display-6 fs-5'><strong className='fs-3'>Product Name: </strong>{item.name}</p>                           
                                     <p className='display-6 fs-5'><strong className='fs-3'>Product Price: </strong>{item.price}</p>                           
                                     <p className='display-6 fs-5'><strong className='fs-3'>Quantity: </strong>{item.quantity}</p>                           
