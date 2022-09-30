@@ -32,14 +32,13 @@ export default function App() {
   const logout = async () => {
     await signOut(auth);
   };
-
   return (
     <div>
       <BrowserRouter >
         <Navbar style={{ padding: "0", display: "flex", alignItems: "center", backgroundColor:"rgba(0, 0, 0, 0.850)", }} expand="lg" variant="dark">
           <Container >
             <Navbar.Toggle style={{border:"none"}} aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav" >
+            <Navbar.Collapse>
               <Nav className="me-auto">
                 <Nav.Link>
                   <Link to={'/'} className='link'><AppleIcon /></Link>

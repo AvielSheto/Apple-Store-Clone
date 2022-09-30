@@ -43,8 +43,8 @@ export default function AllCustomers(props) {
         let customerId = item.customerId
         let itemDate = item.date
         return <div key={index} className='customerPurchases'>
-          <div className='d-flex justify-content-between py-1 1 m-2 mx-md-5'>
-            <div>
+          <div className='d-flex justify-content-between p-1 m-2 mx-md-5'>
+            <div className='p-1'>
               <p className='display-6 fs-1'>Customer ID: {item.customerId}</p>
               <p className='display-6 fs-5'><strong>Purchased Date: </strong>{item.date}</p>
             </div>
@@ -52,34 +52,6 @@ export default function AllCustomers(props) {
               <Link to={`/editCustomer/${item.customerId}`}><Fab size='small' color="primary" aria-label="edit"><EditIcon /></Fab></Link>
             </div>
           </div>
-
-          <div className=' mx-3 p customerPurchases '>
-            <Table  hover size="md" >
-              <thead>
-                <tr>
-                  <th>Customer ID</th>
-                  <th>Product ID</th>
-                  <th>Purchase Date</th>
-                </tr>
-              </thead>
-              <tbody >
-                {storeData.purchases.filter(purchases => purchases.productId === props.id).map((customer, index) => {
-                  return (
-                    <tr key={index}>
-                      <td >{customer.customerId}</td>
-                      <td>{customer.productId}</td>
-                      <td>{customer.date}</td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </Table>
-          </div>
-
-
-
-
-
 
           {showProducts && <div> {storeData.products.map((item, index) => {
             return (
@@ -100,7 +72,7 @@ export default function AllCustomers(props) {
               </div>)
           })}
           </div>}
-          <div style={{ display: 'flex', justifyContent: "space-evenly" }}>
+          <div className='d-flex justify-content-evenly pb-3'>
             {showAddBtn && <Button onClick={addProducts} variant="outlined" color="info">Add Product<ShoppingCartIcon /></Button>}
             {showSaveBtn && <Button onClick={SaveProducts} variant="contained">Save</Button>}
           </div>
