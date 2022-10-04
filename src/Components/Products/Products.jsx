@@ -16,7 +16,7 @@ export default function Products() {
         <div>
             <Container>
                 <div className='allProducts p-1 p-md-3 my-3 mx-md-5 d-flex justify-content-between align-items-center' >
-                    <p className='display-4 px-4'>Products</p>
+                    {/* <p className='display-4 px-4'>Products</p> */}
                     <TotalPurchases />
                 </div>
                 {storeData.products.map((item, index) => {
