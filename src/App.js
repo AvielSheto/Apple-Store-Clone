@@ -35,13 +35,13 @@ export default function App() {
   return (
     <div>
       <BrowserRouter >
-        <Navbar style={{ padding: "0", display: "flex", alignItems: "center", backgroundColor:"rgba(0, 0, 0, 0.850)", }} expand="lg" variant="dark">
+        <Navbar style={{display: "flex", alignItems: "center", backgroundColor:"rgba(0, 0, 0, 0.850)", }} expand="lg" variant="dark">
           <Container >
             <Navbar.Toggle style={{border:"none"}} aria-controls="basic-navbar-nav" />
             <Navbar.Collapse>
               <Nav className="me-auto">
-                <Nav.Link>
-                  <Link to={'/'} className='link'><AppleIcon /></Link>
+                <Nav.Link className="p-2 pt-1">
+                  <Link to={'/'} className='link p-1'><AppleIcon /></Link>
                 </Nav.Link>
                 <Nav.Link>
                   <Link to={'/products'} className='link' >Products</Link>
@@ -60,7 +60,7 @@ export default function App() {
                 </NavDropdown>
               </Nav>
               {user &&
-                <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={{ display: "flex", alignItems: "center"}}>
                   <Avatar sx={{ m: 1, bgcolor: 'info.main' }}></Avatar>
                   <Nav style={{ color: "white" }}>{user?.email}</Nav>
                 </div>

@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
-import {getAuth} from 'firebase/auth'
+import { getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBRlSWfBuebReUn4zypsRsfd3ieWVsDVDo",
-  authDomain: "apple-development-f7a4b.firebaseapp.com",
-  projectId: "apple-development-f7a4b",
-  storageBucket: "apple-development-f7a4b.appspot.com",
-  messagingSenderId: "466898038235",
-  appId: "1:466898038235:web:fe3fa97226be2fe8a18bfe"
+  apiKey: "AIzaSyDx8I9H14ovEzuH-KkBB7bbZZ1HUEhA_M4",
+  authDomain: "apple-a817d.firebaseapp.com",
+  projectId: "apple-a817d",
+  storageBucket: "apple-a817d.appspot.com",
+  messagingSenderId: "855261105997",
+  appId: "1:855261105997:web:287bec1067daa7ab787104",
+  measurementId: "G-L0PQ84X7GZ"
 };
 
 const app = initializeApp(firebaseConfig);

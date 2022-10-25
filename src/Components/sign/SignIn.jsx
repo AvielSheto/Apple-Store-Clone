@@ -36,10 +36,10 @@ export default function SignIn() {
   };
 
   return (
-    <Container className='form p-5 my-4' maxWidth="xs">
+    <Container className='form' maxWidth="xs">
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: 4,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
