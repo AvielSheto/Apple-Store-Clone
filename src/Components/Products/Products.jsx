@@ -6,7 +6,6 @@ import TotalPurchases from './TotalPurchases';
 import './_products.scss';
 // mui
 import AllCustomers from './AllCustomers';
-import Container from '@mui/material/Container';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
 
@@ -14,7 +13,7 @@ export default function Products() {
     const storeData = useSelector((state) => state);
     return (
         <div>
-            <Container>
+            <div className='px-md-5'>
                 <div className='allProducts p-1 p-md-3 my-3 mx-md-5 d-flex justify-content-between align-items-center' >
                     <p className='display-4 px-4'>Products</p>
                     <TotalPurchases />
@@ -39,6 +38,7 @@ export default function Products() {
                                 </div>
                             </div>
                         </div>
+                        
                         <div className='product p-3' >
                             <p className='display-4 px-3'>Product Purchases:</p>
                             <AllCustomers id={ProductId} />
@@ -49,7 +49,7 @@ export default function Products() {
                 })}
                 <br />
                 <br />
-            </Container>
+            </div>
         </div>
     )
 }

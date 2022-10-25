@@ -7,6 +7,8 @@ import Table from 'react-bootstrap/Table';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import Fab from '@mui/material/Fab';
+import EditIcon from '@mui/icons-material/Edit';
 // style scss
 import "./_customers_style.scss";
 
@@ -32,12 +34,12 @@ export default function Customers() {
   }
 
   return (
-    <Container>
-      <div className='customer p-1 p-sm-4 my-3 mx-md-5'>
-        <p className='display-4'>Customers</p>
+    <div className='px-md-5'>
+      <div className='customer px-1 p-sm-4 pt-3 my-3 mx-md-5'>
+        <p className='display-4 ps-3'>Customers</p>
         <br />
-        <Table striped bordered hover size="md">
-          <thead>
+        <Table striped bordered hover size="sm">
+          <thead >
             <tr>
               <th className='display-6 fs-5 fw-semibold'>Customer Name</th>
               <th className='display-6 fs-5 fw-semibold'>Product ID</th>
@@ -75,25 +77,33 @@ export default function Customers() {
         </Table>
       </div>
 
-      {showProduct && <div className='customer p-2 py-4 p-md-5 my-3 mx-md-5'>
+      {showProduct && <div className='customer  py-4 p-md-5 my-3 mx-md-5'>
         {showProduct && <p className='display-4 px-5'>Add Product To Customer: {product.customerId}</p>}
 
 
         {showProduct && storeData.products.map((item, index) => {
           return (
-            <div className='customer ' key={index} style={{ margin: "2rem", padding: "2rem", border: "2px solid black", borderRadius: "15px" }}>
-              <div className='d-md-flex justify-content-between'>
-                <div>
-                  <br />
-                  <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product ID: </strong>{item.name}</Typography>
-                  <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Product Price: </strong>{item.price}</Typography>
-                  <Typography style={{ textAlign: 'left' }} variant="h6" gutterBottom><strong>Quantity: </strong>{item.quantity}</Typography>
+            <div className='customer ' key={index}>
+              <div className='product p-4 p-md-5 my-3'>
+                <div className='d-flex justify-content-between'>
+                  <p className='display-6 fs-4'> <strong className='display-6 fw-normal fs-2'>Product ID: </strong>{item.id}</p>
+                  <Link to={`/editProduct/${item.id}`}><Fab size="small" color="primary" aria-label="edit"><EditIcon /></Fab></Link>
                 </div>
-                <div>
-                  <img className='align-content-md-center mx-5 mx-md-0' style={{ height: "12rem", width: "16rem" }} src={item.img} alt="product" />
+                <hr style={{ width: "100%", textAlign: "center" }} />
+                <div className='product p-2 p-md-4 d-sm-flex justify-content-between'>
+                  <div className='p-2'>
+                    <p className='display-6 fs-5'><strong className='fs-3'>Product Name: </strong>{item.name}</p>
+                    <p className='display-6 fs-5'><strong className='fs-3'>Product Price: </strong>{item.price}</p>
+                    <p className='display-6 fs-5'><strong className='fs-3'>Quantity: </strong>{item.quantity}</p>
+                  </div>
+                  <div className='d-flex align-content-center justify-content-center'>
+                    <img style={{ height: "12rem", width: "16rem" }} src={item.img} alt="product" />
+                  </div>
                 </div>
               </div>
+              <div className='d-flex justify-content-center'>
               <Button onClick={() => { setProduct({ ...product, productId: item.id, date: `${today}` }) }} variant='contained'>Add</Button>
+              </div>
             </div>
           )
         })}
@@ -103,6 +113,6 @@ export default function Customers() {
       </div>}
       <br />
       <br />
-    </Container>
+    </div>
   )
 }

@@ -8,8 +8,7 @@ import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-// bootstrap
-import Table from 'react-bootstrap/Table';
+
 
 export default function AllCustomers(props) {
   const storeData = useSelector(state => state);

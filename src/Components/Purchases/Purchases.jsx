@@ -56,7 +56,7 @@ export default function Purchased() {
   }
 
   return (
-    <Container>
+    <div className='px-md-5'>
       <div className='purchased p-4 p-md-5 my-3 mx-md-5' >
         <p className='display-4'>Purchased Search</p>
         <br />
@@ -125,6 +125,6 @@ export default function Purchased() {
       }
       <br />
       <br />
-    </Container>
+    </div>
   )
 }
