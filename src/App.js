@@ -35,32 +35,18 @@ export default function App() {
   return (
     <div>
       <BrowserRouter >
-        <Navbar style={{ display: "flex", alignItems: "center", backgroundColor: "rgba(0, 0, 0, 0.850)", }} expand="lg" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container >
-            <Navbar.Toggle style={{ border: "none" }} aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse>
+            <Navbar.Toggle style={{ border: "none" }} aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link className="p-2 pt-1">
-                  <Link to={'/'} className='link p-1'><AppleIcon /></Link>
-                </Nav.Link>
-                <Nav.Link>
-                  <Link to={'/products'} className='link' >Products</Link>
-                </Nav.Link>
-                <Nav.Link>
-                  <Link to={'/customers'} className='link'>Costumers</Link>
-                </Nav.Link>
-                <Nav.Link>
-                  <Link to={'/purchased'} className='link'>Purchases</Link>
-                </Nav.Link>
-                <NavDropdown style={{ color: "white" }} title="Account" id="basic-nav-dropdown">
-                  <Nav.Link>
-                    <Link to={'/signIn'} className='ps-2 text-decoration-none'>Sign in</Link>
-                  </Nav.Link>
-                  <Nav.Link>
-                    <Link to={'/signUp'} className='ps-2 text-decoration-none'>Sign Up</Link>
-                  </Nav.Link>
-                  {/* <NavDropdown.Item href="/signIn">Sign In</NavDropdown.Item>
-                  <NavDropdown.Item href="/signUp">Sign Up</NavDropdown.Item> */}
+                <Nav.Link href="/" className="p-2 pt-1"><AppleIcon /></Nav.Link>
+                <Nav.Link href="/products" className="p-2 pt-1">Products</Nav.Link>
+                <Nav.Link href="/customers" className="p-2 pt-1">Costumers</Nav.Link>
+                <Nav.Link href="/purchased" className="p-2 pt-1">Purchases</Nav.Link>
+                <NavDropdown className="ps-2 " title="Account" id="basic-nav-dropdown">
+                  <NavDropdown.Item onClick={() => { '/signIn"' }}>Sign in</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => { '/signIn"' }}>Sign Up</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={logout}>log out</NavDropdown.Item>
                 </NavDropdown>
