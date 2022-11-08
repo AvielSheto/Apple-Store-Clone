@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import './_purchased_style.scss';
 // mui
 import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -56,8 +55,8 @@ export default function Purchased() {
   }
 
   return (
-    <div className='px-md-5'>
-      <div className='purchased p-4 p-md-5 my-3 mx-md-5' >
+    <div className='px-md-5 d-flex flex-column align-items-center'>
+      <div className='purchased p-4 p-md-5 my-3 mx-md-5 col-12 col-md-8' >
         <p className='display-4'>Purchased Search</p>
         <br />
         <FormControl fullWidth>
@@ -98,8 +97,9 @@ export default function Purchased() {
         <br />
         <Button onClick={search} variant='contained'>Search</Button>
       </div>
+      {/* result */}
       {result.customers &&
-        <div className='purchased p-4 p-md-5 my-3 mx-md-5'>
+        <div className='purchased p-4 p-md-5 my-3 mx-md-5 col-12 col-md-8'>
           <p className='display-5'>Results</p>
           <Table striped bordered hover size="md">
             <thead>

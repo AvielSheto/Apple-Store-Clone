@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 // mui
 import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
 // style scss
@@ -34,7 +32,7 @@ export default function Customers() {
   }
 
   return (
-    <div className='px-md-5'>
+    <div className='px-md-5 d-flex flex-column align-align-items-center'>
       <div className='customer px-1 p-sm-4 pt-3 my-3 mx-md-5'>
         <p className='display-4 ps-3'>Customers</p>
         <br />

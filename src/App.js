@@ -45,8 +45,8 @@ export default function App() {
                 <Nav.Link href="/customers" className="p-2 pt-1">Costumers</Nav.Link>
                 <Nav.Link href="/purchased" className="p-2 pt-1">Purchases</Nav.Link>
                 <NavDropdown className="ps-2 " title="Account" id="basic-nav-dropdown">
-                  <NavDropdown.Item onClick={() => { '/signIn"' }}>Sign in</NavDropdown.Item>
-                  <NavDropdown.Item onClick={() => { '/signIn"' }}>Sign Up</NavDropdown.Item>
+                  <NavDropdown.Item href="/signIn">Sign in</NavDropdown.Item>
+                  <NavDropdown.Item href="/signUp">Sign Up</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item onClick={logout}>log out</NavDropdown.Item>
                 </NavDropdown>
