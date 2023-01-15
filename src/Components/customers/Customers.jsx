@@ -77,8 +77,6 @@ export default function Customers() {
 
       {showProduct && <div className='customer  py-4 p-md-5 my-3 mx-md-5'>
         {showProduct && <p className='display-4 px-5'>Add Product To Customer: {product.customerId}</p>}
-
-
         {showProduct && storeData.products.map((item, index) => {
           return (
             <div className='customer ' key={index}>

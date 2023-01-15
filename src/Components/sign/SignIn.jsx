@@ -39,7 +39,8 @@ export default function SignIn() {
     <Container className='form' maxWidth="xs">
       <Box
         sx={{
-          marginTop: 4,
+          paddingY: '3rem',
+          marginTop: 2,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
